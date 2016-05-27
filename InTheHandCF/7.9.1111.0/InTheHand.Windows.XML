@@ -1,0 +1,437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InTheHand.Windows</name>
+    </assembly>
+    <members>
+        <member name="T:InTheHand.Windows.Controls.SaveFileDialog">
+            <summary>
+            Provides a dialog box that enables the user to specify options for saving a file.
+            </summary>
+            <remarks>This class enables the user to specify a file name.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Embedded Compact</term><description>Windows Embedded Compact 7</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Windows.Controls.SaveFileDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Windows.Controls.SaveFileDialog"/> class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Windows.Controls.SaveFileDialog.ShowDialog">
+            <summary>
+            Displays a <see cref="T:InTheHand.Windows.Controls.SaveFileDialog"/> that is modal to the Silverlight window.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Windows.Controls.SaveFileDialog.OpenFile">
+            <summary>
+            Opens the file specified by the <see cref="P:InTheHand.Windows.Controls.SaveFileDialog.SafeFileName"/> property.
+            </summary>
+            <returns>The read/write file selected by the user.</returns>
+            <exception cref="T:System.InvalidOperationException">No file was selected in the dialog box.</exception>
+            <remarks>You should always check that the <see cref="M:InTheHand.Windows.Controls.SaveFileDialog.ShowDialog"/> method returns true before accessing the stream associated with the file.
+            Failure to do this will create an exception.</remarks>
+        </member>
+        <member name="P:InTheHand.Windows.Controls.SaveFileDialog.DefaultExt">
+            <summary>
+            Gets or sets the default file name extension applied to files that are saved with the <see cref="T:InTheHand.Windows.Controls.SaveFileDialog"/>.
+            </summary>
+            <value>The default file name extension applied to files that are saved with the <see cref="T:InTheHand.Windows.Controls.SaveFileDialog"/>, which can optionally include the dot character (.).</value>
+            <remarks>The default file name extension is applied when the selected filter does not specify an extension (or the Filter property is not set) and the user does not specify an extension. 
+            For example, if the DefaultExt property is set to .my, the selected item in the Save as type drop-down list has a filter string set to All Files|*.*, and a file name without a extension is specified in the File name box, the file is saved with the .my extension.</remarks>
+        </member>
+        <member name="P:InTheHand.Windows.Controls.SaveFileDialog.DefaultFileName">
+            <summary>
+            Gets or sets the file name used if a file name is not specified by the user.
+            </summary>
+            <value>The file name used if a file name is not specified by the user.</value>
+            <exception cref="T:System.ArgumentException">Occurs if the specified file name is null or contains invalid characters such as quotes ("), less than (&lt;), greater than (&gt;), pipe (|), backspace (\b), null (\0), tab (\t), colon (:), asterisk(*), question mark (?), and slashes (\\, /).</exception>
+        </member>
+        <member name="P:InTheHand.Windows.Controls.SaveFileDialog.SafeFileName">
+            <summary>
+            Gets the file name for the selected file associated with the <see cref="T:InTheHand.Windows.Controls.SaveFileDialog"/>.
+            </summary>
+            <value>The file name for the selected file associated with the <see cref="T:InTheHand.Windows.Controls.SaveFileDialog"/>.
+            The default is <see cref="F:System.String.Empty"/>.</value>
+        </member>
+        <member name="P:InTheHand.Windows.Controls.SaveFileDialog.Filter">
+            <summary>
+            Gets or sets the current file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box.
+            </summary>
+            <value>The file filtering options available in the dialog box.</value>
+            <exception cref="T:System.ArgumentException">Filter format is invalid.</exception>
+            <remarks>For each filtering option, the filter string contains a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options are separated by the vertical bar.
+            <para>The following is an example of a filter string:</para>
+            <code>Text files (*.txt)|*.txt|All files (*.*)|*.*</code>
+            <para>You can add several filter patterns to a filter by separating the file types with semicolons, for example:</para>
+            <code>Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*</code>
+            <para>Use the FilterIndex property to set which filtering option is shown first to the user.</para></remarks>
+        </member>
+        <member name="P:InTheHand.Windows.Controls.SaveFileDialog.FilterIndex">
+            <summary>
+            Gets or sets the index of the filter currently selected in the file dialog box.
+            </summary>
+            <value>A value containing the index of the filter currently selected in the file dialog box.
+            The default value is 1.</value>
+            <remarks>Use the FilterIndex property to set which filtering option is used.
+            On Windows Mobile the user cannot change the filter themselves.
+            The index of the first item in the Filter list is 1.</remarks>
+        </member>
+        <member name="T:InTheHand.Windows.MessageBoxButton">
+            <summary>
+            Specifies the buttons that are displayed on a message box.
+            Used as an argument of the <see cref="M:InTheHand.Windows.MessageBox.Show(System.String,System.String,InTheHand.Windows.MessageBoxButton)"/> method.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Phone</term><description>Windows Phone 7 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxButton.OK">
+            <summary>
+            The message box displays an <b>OK</b> button.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxButton.OKCancel">
+            <summary>
+            The message box displays <b>OK</b> and <b>Cancel</b> buttons.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxButton.AbortRetryIgnore">
+            <summary>
+            The message box displays <b>Abort</b>, <b>Retry</b> and <b>Ignore</b> buttons.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxButton.YesNoCancel">
+            <summary>
+            The message box displays <b>Yes</b>, <b>No</b> and <b>Cancel</b> buttons.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxButton.YesNo">
+            <summary>
+            The message box displays <b>Yes</b> and <b>No</b> buttons.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxButton.RetryCancel">
+            <summary>
+            The message box displays <b>Retry</b> and <b>Cancel</b> buttons.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Windows.Clipboard">
+            <summary>
+            Provides static methods that facilitate transferring data to and from the system Clipboard.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Windows.Clipboard.ContainsText">
+            <summary>
+            Queries the clipboard for the presence of data in the UnicodeText format.
+            </summary>
+            <returns>true if the system clipboard contains Unicode text data; otherwise, false.</returns>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Windows.Clipboard.GetText">
+            <summary>
+            Retrieves Unicode text data from the system clipboard, if Unicode text data exists.
+            </summary>
+            <returns>If Unicode text data is present on the system clipboard, returns a string that contains the Unicode text data.
+            Otherwise, returns an empty string.</returns>
+            <seealso cref="M:InTheHand.Windows.Clipboard.SetText(System.String)"/>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Windows.Clipboard.SetText(System.String)">
+            <summary>
+            Sets Unicode text data to store on the clipboard, for later access with <see cref="M:InTheHand.Windows.Clipboard.GetText"/>.
+            </summary>
+            <param name="text">A string that contains the Unicode text data to store on the clipboard.</param>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="T:InTheHand.Windows.MessageBox">
+            <summary>
+            Displays a message box.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Phone</term><description>Windows Phone 7 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Windows.MessageBox.Show(System.String)">
+            <summary>
+            Displays a message box that has a message and that returns a result.
+            </summary>
+            <param name="messageBoxText">A <see cref="T:System.String"/> that specifies the text to display.</param>
+            <returns>A <see cref="T:InTheHand.Windows.MessageBoxResult"/> value that specifies which message box button is clicked by the user.</returns>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Phone</term><description>Windows Phone 7 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Windows.MessageBox.Show(System.String,System.String)">
+            <summary>
+            Displays a message box that has a message and title bar caption; and that returns a result.
+            </summary>
+            <param name="messageBoxText">A <see cref="T:System.String"/> that specifies the text to display.</param>
+            <param name="caption">A <see cref="T:System.String"/> that specifies the title bar caption to display.</param>
+            <returns>A <see cref="T:InTheHand.Windows.MessageBoxResult"/> value that specifies which message box button is clicked by the user.</returns>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Phone</term><description>Windows Phone 7 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Windows.MessageBox.Show(System.String,System.String,InTheHand.Windows.MessageBoxButton)">
+            <summary>
+            Displays a message box that has a message, title bar caption, and button; and that returns a result.
+            </summary>
+            <param name="messageBoxText">A <see cref="T:System.String"/> that specifies the text to display.</param>
+            <param name="caption">A <see cref="T:System.String"/> that specifies the title bar caption to display.</param>
+            <param name="button">A <see cref="T:InTheHand.Windows.MessageBoxButton"/> value that specifies which button or buttons to display.</param>
+            <returns>A <see cref="T:InTheHand.Windows.MessageBoxResult"/> value that specifies which message box button is clicked by the user.</returns>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Phone</term><description>Windows Phone 7 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Windows.MessageBox.Show(System.String,System.String,InTheHand.Windows.MessageBoxButton,InTheHand.Windows.MessageBoxImage)">
+            <summary>
+            Displays a message box that has a message, title bar caption, button, and icon; and that returns a result.
+            </summary>
+            <param name="messageBoxText">A <see cref="T:System.String"/> that specifies the text to display.</param>
+            <param name="caption">A <see cref="T:System.String"/> that specifies the title bar caption to display.</param>
+            <param name="button">A <see cref="T:InTheHand.Windows.MessageBoxButton"/> value that specifies which button or buttons to display.</param>
+            <param name="icon">A <see cref="T:InTheHand.Windows.MessageBoxImage"/> value that specifies the icon to display.</param>
+            <returns>A <see cref="T:InTheHand.Windows.MessageBoxResult"/> value that specifies which message box button is clicked by the user.</returns>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Phone</term><description>Windows Phone 7 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Windows.MessageBox.Show(System.String,System.String,InTheHand.Windows.MessageBoxButton,InTheHand.Windows.MessageBoxImage,InTheHand.Windows.MessageBoxResult)">
+            <summary>
+            Displays a message box that has a message, title bar caption, button, and icon; and that accepts a default message box result and returns a result.
+            </summary>
+            <param name="messageBoxText">A <see cref="T:System.String"/> that specifies the text to display.</param>
+            <param name="caption">A <see cref="T:System.String"/> that specifies the title bar caption to display.</param>
+            <param name="button">A <see cref="T:InTheHand.Windows.MessageBoxButton"/> value that specifies which button or buttons to display.</param>
+            <param name="icon">A <see cref="T:InTheHand.Windows.MessageBoxImage"/> value that specifies the icon to display.</param>
+            <param name="defaultResult">A <see cref="T:InTheHand.Windows.MessageBoxResult"/> value that specifies the default result of the message box.</param>
+            <returns>A <see cref="T:InTheHand.Windows.MessageBoxResult"/> value that specifies which message box button is clicked by the user.</returns>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Phone</term><description>Windows Phone 7 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="T:InTheHand.Windows.MessageBoxResult">
+            <summary>
+            Specifies which message box button that a user clicks.
+            MessageBoxResult is returned by the <see cref="M:InTheHand.Windows.MessageBox.Show(System.String,System.String,InTheHand.Windows.MessageBoxButton,InTheHand.Windows.MessageBoxImage,InTheHand.Windows.MessageBoxResult)"/> method.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Phone</term><description>Windows Phone 7 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxResult.None">
+            <summary>
+            The message box returns no result.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxResult.OK">
+            <summary>
+            The result value of the message box is <b>OK</b>.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxResult.Cancel">
+            <summary>
+            The result value of the message box is <b>Cancel</b>.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxResult.Abort">
+            <summary>
+            The result value of the message box is <b>Abort</b>.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxResult.Retry">
+            <summary>
+            The result value of the message box is <b>Retry</b>.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxResult.Ignore">
+            <summary>
+            The result value of the message box is <b>Ignore</b>.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxResult.Yes">
+            <summary>
+            The result value of the message box is <b>Yes</b>.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxResult.No">
+            <summary>
+            The result value of the message box is <b>No</b>.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Windows.MessageBoxImage">
+            <summary>
+            Specifies the icon that is displayed by a message box.
+            </summary>
+            <remarks>For Windows Phone this affects only the sound played.</remarks>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003, Windows Mobile 5.0 and later</description></item>
+            <item><term>Windows Phone</term><description>Windows Phone 7 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxImage.None">
+            <summary>
+            No icon is displayed. No sound is played.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxImage.Error">
+            <summary>
+            The message box displays an <b>error</b> icon.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxImage.Hand">
+            <summary>
+            The message box displays a <b>hand</b> icon.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxImage.Stop">
+            <summary>
+            The message box displays a <b>stop</b> icon.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxImage.Question">
+            <summary>
+            The message box displays a <b>question mark</b> icon.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxImage.Warning">
+            <summary>
+            The message box displays a <b>warning</b> icon.
+            Equivalent to the default MessageBox behaviour on Windows Phone.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxImage.Exclamation">
+            <summary>
+            The message box displays an <b>exclamation mark</b> icon.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxImage.Information">
+            <summary>
+            The message box displays an <b>information</b> icon.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Windows.MessageBoxImage.Asterisk">
+            <summary>
+            The message box displays an <b>asterisk</b> icon.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Windows.Controls.OpenFileDialog">
+            <summary>
+            Provides a dialog box that enables the user to select a file.
+            </summary>
+            <remarks>This class enables the user to open a file on the local computer or a networked computer.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Embedded Compact</term><description>Windows Embedded Compact 7</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Windows.Controls.OpenFileDialog.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:InTheHand.Windows.Controls.OpenFileDialog"/>.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Windows.Controls.OpenFileDialog.ShowDialog">
+            <summary>
+            Displays an OpenFileDialog that is modal to the Silverlight window.
+            </summary>
+            <returns>true if the user clicked OK; false if the user clicked Cancel or closed the dialog box.</returns>
+        </member>
+        <member name="P:InTheHand.Windows.Controls.OpenFileDialog.InitialDirectory">
+            <summary>
+            Gets or sets the directory displayed when the dialog starts.
+            </summary>
+            <value>The directory displayed when the dialog starts.
+            The default is an empty string.</value>
+            <exception cref="T:System.ArgumentException">The directory specified is not a valid file path.</exception>
+        </member>
+        <member name="P:InTheHand.Windows.Controls.OpenFileDialog.File">
+            <summary>
+            Gets a <see cref="T:System.IO.FileInfo"/> object for the selected file.
+            </summary>
+            <value>The selected file.</value>
+        </member>
+        <member name="P:InTheHand.Windows.Controls.OpenFileDialog.Filter">
+            <summary>
+            Gets or sets the current file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box.
+            </summary>
+            <value>The file filtering options available in the dialog box.</value>
+            <exception cref="T:System.ArgumentException">Filter format is invalid.</exception>
+            <remarks>For each filtering option, the filter string contains a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options are separated by the vertical bar.
+            <para>The following is an example of a filter string:</para>
+            <code>Text files (*.txt)|*.txt|All files (*.*)|*.*</code>
+            <para>You can add several filter patterns to a filter by separating the file types with semicolons, for example:</para>
+            <code>Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*</code>
+            <para>Use the <see cref="P:InTheHand.Windows.Controls.OpenFileDialog.FilterIndex"/> property to set which filtering option is shown first to the user.</para></remarks>
+        </member>
+        <member name="P:InTheHand.Windows.Controls.OpenFileDialog.FilterIndex">
+            <summary>
+            Gets or sets the index of the filter currently selected in the file dialog box.
+            </summary>
+            <value>A value containing the index of the filter currently selected in the file dialog box.
+            The default value is 1.</value>
+            <remarks>Use the FilterIndex property to set which filtering option is used.
+            On Windows Mobile the user cannot change the filter themselves.
+            The index of the first item in the Filter list is 1.</remarks>
+        </member>
+    </members>
+</doc>

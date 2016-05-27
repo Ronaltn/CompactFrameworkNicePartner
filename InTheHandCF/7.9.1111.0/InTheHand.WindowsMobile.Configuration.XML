@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InTheHand.WindowsMobile.Configuration</name>
+    </assembly>
+    <members>
+        <member name="T:InTheHand.WindowsMobile.Configuration.ConfigurationManager">
+            <summary>
+            Provides methods for sending device configuration files to Configuration Manager for either complete processing, or just for testing.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 2003 (not Classic Edition) and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows Embedded CE 6.0 and later</description></item>
+            <item><term>Windows Embedded NavReady</term><description>Windows Embedded NavReady 2009 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Configuration.ConfigurationManager.ProcessConfiguration(System.Xml.XmlDocument,System.Boolean)">
+            <summary>
+            Sends a device configuration file to Configuration Manager for processing.
+            </summary>
+            <param name="configDoc">The configuration document used to provision the device.</param>
+            <param name="metadata">true to return metadata associated with the XML parm elements in the new configuration; otherwise, false.</param>
+            <returns>If metadata is true, this method returns metadata associated with the XML parm elements in this configuration.</returns>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Configuration.ConfigurationManager.TestConfiguration(System.Xml.XmlDocument,System.Boolean)">
+            <summary>
+            Sends a device configuration file to Configuration Manager for testing.
+            </summary>
+            <param name="configDoc">The configuration document used to provision the device.</param>
+            <param name="metadata">true to return metadata associated with the XML parm elements in the new configuration; otherwise, false.</param>
+            <returns>If metadata is true, this method returns metadata associated with the XML parm elements in this configuration.</returns>
+            <remarks>Configuration Manager will not process the configuration file, but it can still return useful metadata associated with the XML parm elements.</remarks>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Configuration.ConfigurationManager.QueryPolicy(InTheHand.WindowsMobile.Configuration.SecurityPolicy)">
+            <summary>
+            Retrieves the value of the policy specified.
+            </summary>
+            <param name="policy">The policy identifier.</param>
+            <returns>The value of the policy identified by policy.</returns>
+            <remarks>If the policy setting does not exist, zero (0) is returned.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:InTheHand.WindowsMobile.Configuration.ConfigurationManager.CurrentTrust">
+            <summary>
+            Retrieves the assigned trust level of a process.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003 and later, Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded</term><description>Windows CE 4.1 to Windows Embedded CE 6.0</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="T:InTheHand.WindowsMobile.Configuration.TrustLevel">
+            <summary>
+            Indicates the level of trust for a process.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.TrustLevel.NoTrust">
+            <summary>
+            The OEM does not trust this module.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.TrustLevel.Restricted">
+            <summary>
+            The OEM trusts the module to run, but restricts the module from making certain function calls. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.TrustLevel.Trusted">
+            <summary>
+            The OEM trusts the module to perform any OS function calls.
+            </summary>
+        </member>
+        <member name="T:InTheHand.WindowsMobile.Configuration.SecurityPolicy">
+            <summary>
+            Contains standard security policy identifiers.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.AutoRun">
+            <summary>
+            Indicates whether applications stored on a storage card are allowed to auto-run when inserted into the device.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.Rapi">
+            <summary>
+            Restricts the access of remote applications that are using Remote API (RAPI) to implement ActiveSync operations on Windows Mobile powered devices.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.UnsignedCabs">
+            <summary>
+            Indicates whether unsigned .cab files can be installed on the device.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.UnsignedApplications">
+            <summary>
+            Indicates whether unsigned applications are allowed to run on Windows Mobile powered devices.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.UnsignedThemes">
+            <summary>
+            Indicates whether theme files can be installed on the device.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.TpsCarrierRole">
+            <summary>
+            Indicates whether mobile operators can be assigned the Trusted Provisioning Server (TPS) role.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.MaxAuthenticationRetry">
+            <summary>
+            Specifies the maximum number of times the user is allowed to try authenticating a Wireless Application Protocol (WAP) PIN-signed message.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.WapSignedMessage">
+            <summary>
+            Indicates whether a WAP signed message is accepted based on whether the role assigned to the message matches any of the roles specified in the policy setting.
+            All messages are assigned role masks based on its security level and origin. The result of AND combination of the message role mask with the policy role mask determines how the message is processed. 
+            If the result is non-zero, the message is accepted. 
+            <para>Deprecated - Use OmaCPNetworkPINMessage and OmaCPUserPINMessage policies</para>
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.SLMessage">
+            <summary>
+            Indicates whether SL messages are accepted.
+            An SL message downloads new services or provisioning XML to the Windows Mobile powered device.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.SIMessage">
+            <summary>
+            Indicates whether SI messages are accepted.
+            An SI message is sent to Windows Mobile 6 Standard to notify users of new services, service updates, and provisioning services.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.UnauthenticatedMessages">
+            <summary>
+            Indicates whether to accept unsigned WAP messages processed by the default security provider in the Security Module (Push Router), based on their origin.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.OtaProvisioning">
+            <summary>
+            Specifies which provisioning messages are accepted by the configuration host based on the roles assigned to the messages.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.WspPush">
+            <summary>
+            Indicates whether Wireless Session Protocol (WSP) notifications from the WAP stack are routed.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.GrantManager">
+            <summary>
+            Grants the system administrative privileges held by SECROLE_MANAGER to other security roles, without modifying metabase role assignments.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.GrantUserAuthenticated">
+            <summary>
+            Grants privileges held by SECROLE_USER_AUTH to other security roles without modifying metabase role assignments.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.TrustedWapProxy">
+            <summary>
+            This setting specifies the level of permissions required to create, modify, or delete a trusted proxy.
+            WAP proxies are configured by means of the PXLOGICAL characteristic element in a WAP provisioning XML document.
+            A WAP proxy is trusted when the TRUST parameter is specified in the PXLOGICAL characteristic element.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.UnsignedPrompt">
+            <summary>
+            This setting indicates whether a user is prompted to accept or reject unsigned .cab, theme, .dll and .exe files.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.PrivilegedApplications">
+            <summary>
+            Specifies which security model is implemented on the device.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.SLSecureDownload">
+            <summary>
+            Allows the operator to override https to use http or wsps to use wsp.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.SoftwareCertificates">
+            <summary>
+            Determines whether software certificates can be used to sign outgoing messages.
+            You can use this security policy with a tool that you create to allow people to import certificates.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.DrmWapRights">
+            <summary>
+            Specifies which DRM rights messages are accepted by the DRM engine based on the role assigned to the message.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.LassPasswordRequired">
+            <summary>
+            Indicates whether a password must be configured on the device.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.WapNetworkPinPrompt">
+            <summary>
+            Used when the over the air (OTA) OMA Client Provisioning message is signed with only a network personal identification number (PIN).
+            Indicates whether or not to prompt the user to accept device setting changes.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.MobileEncryptRemovable">
+            <summary>
+            Specifies if the user is allowed to change mobile encryption settings for the removable storage media.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.Bluetooth">
+            <summary>
+            Specifies if a Bluetooth enabled device allows other devices to perform a search on the device.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.HtmlMessage">
+            <summary>
+            Specifies whether message transports will allow HTML messages.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.SMimeSigning">
+            <summary>
+            Specifies whether the Inbox application will send all messaged signed.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.SMimeEncryption">
+            <summary>
+            Specifies whether the Inbox application will send all messages encrypted.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.SMimeSigningAlgorithm">
+            <summary>
+            Specifies which algorithm to use to sign a message.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.SMimeEncryptionAlgorithm">
+            <summary>
+            Specifies which algorithm to use to encrypt a message.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.OmaCPNetworkPinMessage">
+            <summary>
+            Determines whether the OMA network PIN signed message will be accepted.
+            The message's role mask and the policy's role mask are combined using the AND operator.
+            If the result is non-zero, then the message is accepted.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.OmaCPUserPinMessage">
+            <summary>
+            Determines whether the OMA user PIN or user MAC signed message will be accepted.
+            The message's role mask and the policy's role mask are combined using the AND operator.
+            If the result is non-zero, then the message is accepted.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.OmaCPUserNetworkPinMessage">
+            <summary>
+            Determines whether the OMA user network PIN signed message will be accepted.
+            The message's role mask and the policy's role mask are combined using the AND operator.
+            If the result is non-zero, then the message is accepted.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.SMimeEncryptionNegotiation">
+            <summary>
+            Specifies whether the Inbox application can negotiate the encryption algorithm in case a recipient's certificate does not support the specified encryption algorithm.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.SharepointUncProtocolAccess">
+            <summary>
+            Enables or disables Outlook Mobile SharePoint or UNC access through ActiveSync protocol to get documents.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Configuration.SecurityPolicy.LassDesktopQuickConnect">
+            <summary>
+            Specifies how device authentication is handled when connecting to the desktop.
+            </summary>
+        </member>
+    </members>
+</doc>

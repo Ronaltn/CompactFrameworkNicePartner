@@ -1,0 +1,2386 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InTheHand.Net.NetworkInformation</name>
+    </assembly>
+    <members>
+        <member name="T:InTheHand.Net.NetworkInformation.TcpStatistics">
+            <summary>
+            Provides Internet Protocol (IP) statistical data.
+            </summary>
+            <remarks><para>Equivalent to System.Net.NetworkInformation.TcpStatistics</para>
+            Instances of this class are returned by the <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetTcpIPv4Statistics"/> and <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetTcpIPv6Statistics"/> methods, to give applications access to TCP traffic information.
+            The information in this class correlates to the management information objects described in <a href="http://www.ietf.org/rfc/rfc2012.txt"/>.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.ConnectionsAccepted">
+            <summary>
+            Gets the number of accepted Transmission Control Protocol (TCP) connection requests.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP connection requests accepted.</value>
+            <remarks>IETF RFC 2012 formally defines this value as, "The number of times TCP connections have made a direct transition to the SYN-RCVD state from the LISTEN state."</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.ConnectionsInitiated">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) connection requests made by clients.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP connections initiated by clients.</value>
+            <remarks>IETF RFC 2012 formally defines this value as, "The number of times TCP connections have made a direct transition to the SYN-SENT state from the CLOSED state."</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.CumulativeConnections">
+            <summary>
+            Specifies the total number of Transmission Control Protocol (TCP) connections established.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of connections established.</value>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.CurrentConnections">
+            <summary>
+            Gets the number of current Transmission Control Protocol (TCP) connections.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of current TCP connections.</value>
+            <remarks>IETF RFC 2012 formally defines this value as, "The number of TCP connections for which the current state is either ESTABLISHED or CLOSE-WAIT."</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.ErrorsReceived">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) errors received.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP errors received.</value>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.FailedConnectionAttempts">
+            <summary>
+            Gets the number of failed Transmission Control Protocol (TCP) connection attempts.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of failed TCP connection attempts.</value>
+            <remarks>IETF RFC 2012 formally defines this value as, "The number of times TCP connections have made a direct transition to the CLOSED state from either the SYN-SENT state or the SYN-RCVD state, plus the number of times TCP connections have made a direct transition to the LISTEN state from the SYN-RCVD state."</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.MaximumConnections">
+            <summary>
+            Gets the maximum number of supported Transmission Control Protocol (TCP) connections.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP connections that can be supported.</value>
+            <remarks>If the maximum number of connections is dynamic, this property returns -1.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.MaximumTransmissionTimeout">
+            <summary>
+            Gets the maximum retransmission time-out value for Transmission Control Protocol (TCP) segments.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the maximum number of milliseconds permitted by a TCP implementation for the retransmission time-out value.</value>
+            <remarks>TCP starts a retransmission timer when each outbound segment is passed to the network layer (IP).
+            If no acknowledgement is received for the data in the segment before the timer expires, the segment is retransmitted.
+            The timer can be set to any value between the <see cref="P:InTheHand.Net.NetworkInformation.TcpStatistics.MinimumTransmissionTimeout"/> value and the <see cref="P:InTheHand.Net.NetworkInformation.TcpStatistics.MaximumTransmissionTimeout"/> value.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.MinimumTransmissionTimeout">
+            <summary>
+            Gets the minimum retransmission time-out value for Transmission Control Protocol (TCP) segments.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the minimum number of milliseconds permitted by a TCP implementation for the retransmission time-out value.</value>
+            <remarks>TCP starts a retransmission timer when each outbound segment is passed to the network layer (IP). 
+            If no acknowledgement is received for the data in the segment before the timer expires, the segment is retransmitted. 
+            The timer can be set to any value between the <see cref="P:InTheHand.Net.NetworkInformation.TcpStatistics.MinimumTransmissionTimeout"/> value and the <see cref="P:InTheHand.Net.NetworkInformation.TcpStatistics.MaximumTransmissionTimeout"/> value.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.ResetConnections">
+            <summary>
+            Gets the number of RST packets received by Transmission Control Protocol (TCP) connections.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of reset TCP connections.</value>
+            <remarks>IETF RFC 2012 formally defines this value as, "The number of times TCP connections have made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE-WAIT state."</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.ResetsSent">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) segments sent with the reset flag set.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP segments sent with the reset flag set.</value>
+            <remarks>TCP resets are specified using the reset (RST) control bit in the TCP header.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.SegmentsReceived">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) segments received.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP segments received.</value>
+            <remarks>This data includes segments with errors and segments received on currently established connections.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.SegmentsResent">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) segments re-sent.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP segments retransmitted.</value>
+            <remarks>TCP segments that are not acknowledged as being received at the destination are retransmitted.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.SegmentsSent">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) segments sent.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP segments sent.</value>
+            <remarks>This data includes segments sent for currently established connections but does not include segments containing only retransmitted octets.</remarks>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.PingException">
+            <summary>
+            The exception that is thrown when a <see cref="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)"/> method throws an exception.
+            </summary>
+            <remarks>The Ping class throws this exception to indicate that while sending an Internet Control Message Protocol (ICMP) Echo request, a method called by the <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> class threw an unhandled exception.
+            Applications should check the inner exception of a <see cref="T:InTheHand.Net.NetworkInformation.PingException"/> object to identify the problem.
+            <para>The <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> class does not throw this exception if the ICMP Echo request fails because of network, ICMP, or destination errors.
+            For such errors, the <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> class returns a <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object with the relevant <see cref="T:InTheHand.Net.NetworkInformation.IPStatus"/> value set in the <see cref="P:InTheHand.Net.NetworkInformation.PingReply.Status"/> property.</para></remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PingException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.PingException"/> class using the specified message. 
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the error.</param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.PingException"/> class using the specified message and inner exception. 
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the error.</param>
+            <param name="innerException">The exception that causes the current exception.</param>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPGlobalStatistics">
+            <summary>
+            Provides Internet Protocol (IP) statistical data.
+            </summary>
+            <remarks>
+            This class is used by the <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIPv4GlobalStatistics"/> and <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIPv6GlobalStatistics"/> methods to return IP traffic information.
+            The Internet protocol is used to move IP packets from a source computer to a destination computer. 
+            IP also handles dividing a packet that is too large into multiple packets that are small enough for transport, in a process known as fragmentation.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+            <example>The following code code example displays IP statistics.
+            <code lang="cs">
+            public static void ShowIPStatistics(NetworkInterfaceComponent version)
+            {
+                IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+                IPGlobalStatistics ipstat = null;
+                switch (version)
+                {
+                    case NetworkInterfaceComponent.IPv4:
+                        ipstat = properties.GetIPv4GlobalStatistics();
+                        Console.WriteLine("{0}IPv4 Statistics ",Environment.NewLine);
+                        break;
+                    case NetworkInterfaceComponent.IPv6:
+                        ipstat = properties.GetIPv4GlobalStatistics();
+                        Console.WriteLine("{0}IPv6 Statistics ",Environment.NewLine);
+                        break;
+                    default:
+                        throw new ArgumentException("version");
+                        break;
+                }
+                Console.WriteLine("  Forwarding enabled ...................... : {0}", 
+                    ipstat.ForwardingEnabled);
+                Console.WriteLine("  Interfaces .............................. : {0}", 
+                    ipstat.NumberOfInterfaces);
+                Console.WriteLine("  IP addresses ............................ : {0}", 
+                    ipstat.NumberOfIPAddresses);
+                Console.WriteLine("  Routes .................................. : {0}", 
+                    ipstat.NumberOfRoutes);
+                Console.WriteLine("  Default TTL ............................. : {0}", 
+                    ipstat.DefaultTtl);
+                Console.WriteLine("");    
+                Console.WriteLine("  Inbound Packet Data:");
+                Console.WriteLine("      Received ............................ : {0}", 
+                    ipstat.ReceivedPackets);
+                Console.WriteLine("      Forwarded ........................... : {0}", 
+                    ipstat.ReceivedPacketsForwarded);
+                Console.WriteLine("      Delivered ........................... : {0}", 
+                    ipstat.ReceivedPacketsDelivered);
+                Console.WriteLine("      Discarded ........................... : {0}", 
+                    ipstat.ReceivedPacketsDiscarded);
+                Console.WriteLine("      Header Errors ....................... : {0}", 
+                    ipstat.ReceivedPacketsWithHeadersErrors);
+                Console.WriteLine("      Address Errors ...................... : {0}", 
+                    ipstat.ReceivedPacketsWithAddressErrors);
+                Console.WriteLine("      Unknown Protocol Errors ............. : {0}", 
+                    ipstat.ReceivedPacketsWithUnknownProtocol);
+                Console.WriteLine("");    
+                Console.WriteLine("  Outbound Packet Data:");
+                Console.WriteLine("      Requested ........................... : {0}", 
+                    ipstat.OutputPacketRequests);
+                Console.WriteLine("      Discarded ........................... : {0}", 
+                    ipstat.OutputPacketsDiscarded);
+                Console.WriteLine("      No Routing Discards ................. : {0}", 
+                    ipstat.OutputPacketsWithNoRoute);
+                Console.WriteLine("      Routing Entry Discards .............. : {0}", 
+                    ipstat.OutputPacketRoutingDiscards);
+                Console.WriteLine("");    
+                Console.WriteLine("  Reassembly Data:");
+                Console.WriteLine("      Reassembly Timeout .................. : {0}", 
+                    ipstat.PacketReassemblyTimeout);
+                Console.WriteLine("      Reassemblies Required ............... : {0}", 
+                    ipstat.PacketReassembliesRequired);
+                Console.WriteLine("      Packets Reassembled ................. : {0}", 
+                    ipstat.PacketsReassembled);
+                Console.WriteLine("      Packets Fragmented .................. : {0}", 
+                    ipstat.PacketsFragmented);
+                Console.WriteLine("      Fragment Failures ................... : {0}", 
+                    ipstat.PacketFragmentFailures);
+                Console.WriteLine("");
+            }</code>
+            </example>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.DefaultTtl">
+            <summary>
+            Gets the default time-to-live (TTL) value for Internet Protocol (IP) packets.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ForwardingEnabled">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value that specifies whether Internet Protocol (IP) packet forwarding is enabled.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.NumberOfInterfaces">
+            <summary>
+            Gets the number of network interfaces.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.NumberOfIPAddresses">
+            <summary>
+            Gets the number of Internet Protocol (IP) addresses assigned to the local computer.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.NumberOfRoutes">
+            <summary>
+            Gets the number of routes in the Internet Protocol (IP) routing table.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.OutputPacketRequests">
+            <summary>
+            Gets the number of outbound Internet Protocol (IP) packets.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.OutputPacketRoutingDiscards">
+            <summary>
+            Gets the number of routes that have been discarded from the routing table.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.OutputPacketsDiscarded">
+            <summary>
+            Gets the number of transmitted Internet Protocol (IP) packets that have been discarded.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.OutputPacketsWithNoRoute">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets for which the local computer could not determine a route to the destination address.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketFragmentFailures">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets that could not be fragmented.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketReassembliesRequired">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets that required reassembly.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketReassemblyFailures">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets that were not successfully reassembled.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketReassemblyTimeout">
+            <summary>
+            Gets the maximum amount of time within which all fragments of an Internet Protocol (IP) packet must arrive.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketsFragmented">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets fragmented.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketsReassembled">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets reassembled.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPackets">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsDelivered">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets delivered.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsDiscarded">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets that have been received and discarded.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsForwarded">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets forwarded.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsWithAddressErrors">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets with address errors that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsWithHeadersErrors">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets with header errors that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsWithUnknownProtocol">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets received on the local machine with an unknown protocol in the header.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.NetworkInterfaceType">
+            <summary>
+            Specifies types of network interfaces.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Unknown">
+            <summary>
+            The interface type is not known.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Ethernet">
+            <summary>
+            The network interface uses an Ethernet connection.
+            Ethernet is defined in IEEE standard 802.3. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.TokenRing">
+            <summary>
+            The network interface uses a Token-Ring connection.
+            Token-Ring is defined in IEEE standard 802.5. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Fddi">
+            <summary>
+            The network interface uses a Fiber Distributed Data Interface (FDDI) connection. 
+            FDDI is a set of standards for data transmission on fiber optic lines in a local area network.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.BasicIsdn">
+            <summary>
+            The network interface uses a basic rate interface Integrated Services Digital Network (ISDN) connection.
+            ISDN is a set of standards for data transmission over telephone lines.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.PrimaryIsdn">
+            <summary>
+            The network interface uses a primary rate interface Integrated Services Digital Network (ISDN) connection.
+            ISDN is a set of standards for data transmission over telephone lines.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Ppp">
+            <summary>
+            The network interface uses a Point-To-Point protocol (PPP) connection. 
+            PPP is a protocol for data transmission using a serial device. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Loopback">
+            <summary>
+            The network interface is a loopback adapter. 
+            Such interfaces are used primarily for testing; no traffic is sent.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Ethernet3Megabit">
+            <summary>
+            The network interface uses an Ethernet 3 megabit/second connection.
+            This version of Ethernet is defined in IETF RFC 895.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Slip">
+            <summary>
+            The network interface uses a Serial Line Internet Protocol (SLIP) connection. 
+            SLIP is defined in IETF RFC 1055.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Atm">
+            <summary>
+            The network interface uses asynchronous transfer mode (ATM) for data transmission.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.GenericModem">
+            <summary>
+            The network interface uses a modem.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.FastEthernetT">
+            <summary>
+            The network interface uses a Fast Ethernet connection.
+            Fast Ethernet provides a data rate of 100 megabits per second, known as 100BaseT.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Isdn">
+            <summary>
+            The network interface uses a connection configured for ISDN and the X.25 protocol.
+            X.25 allows computers on public networks to communicate using an intermediary computer.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.FastEthernetFx">
+            <summary>
+            The network interface uses a Fast Ethernet connection over optical fiber.
+            This type of connection is also known as 100BaseFX.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Wireless80211">
+            <summary>
+            The network interface uses a wireless LAN connection (IEEE 802.11 standard).
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.AsymmetricDsl">
+            <summary>
+            The network interface uses an Asymmetric Digital Subscriber Line (ADSL).
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.RateAdaptDsl">
+            <summary>
+            The network interface uses a Rate Adaptive Digital Subscriber Line (RADSL).
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.SymmetricDsl">
+            <summary>
+            The network interface uses a Symmetric Digital Subscriber Line (SDSL).
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.VeryHighSpeedDsl">
+            <summary>
+            The network interface uses a Very High Data Rate Digital Subscriber Line (VDSL).
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.IPOverAtm">
+            <summary>
+            The network interface uses Internet Protocol (IP) in combination with asynchronous transfer mode (ATM) for data transmission.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.GigabitEthernet">
+            <summary>
+            The network interface uses a gigabit Ethernet connection.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.Tunnel">
+            <summary>
+            The network interface uses a tunnel connection.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.MultiRateSymmetricDsl">
+            <summary>
+            The network interface uses a Multirate Digital Subscriber Line.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.HighPerformanceSerialBus">
+            <summary>
+            The network interface uses a High Performance Serial Bus (IEEE1394).
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.MobileBroadbandGsm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetworkInterfaceType.MobileBroadbandCdma">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPInterfaceProperties">
+            <summary>
+            Provides information about network interfaces that support Internet Protocol version 4 (IPv4) or Internet Protocol version 6 (IPv6).
+            </summary>
+            <remarks>This class provides access to configuration and address information for network interfaces that support IPv4 or IPv6.
+            You do not create instances of this class; they are returned by the <see cref="M:InTheHand.Net.NetworkInformation.NetworkInterface.GetIPProperties"/> method.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPInterfaceProperties.DnsSuffix">
+            <summary>
+            Gets the Domain Name System (DNS) suffix associated with this interface.
+            </summary>
+            <value>A <see cref="T:System.String"/> that contains the DNS suffix for this interface, or <see cref="F:System.String.Empty"/> if there is no DNS suffix for the interface.</value>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPInterfaceProperties.IsDynamicDnsEnabled">
+            <summary>
+            Gets a Boolean value that indicates whether this interface is configured to automatically register its IP address information with the Domain Name System (DNS).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPInterfaceProperties.DnsAddresses">
+            <summary>
+            Gets the addresses of Domain Name System (DNS) servers for this interface.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPInterfaceProperties.AnycastAddresses">
+            <summary>
+            Gets the anycast IP addresses assigned to this interface.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPInterfaceProperties.MulticastAddresses">
+            <summary>
+            Gets the multicast addresses assigned to this interface.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPInterfaceProperties.UnicastAddresses">
+            <summary>
+            Gets the unicast addresses assigned to this interface.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.PrefixOrigin">
+            <summary>
+            Specifies how an IP address network prefix was located.
+            </summary>
+            <remarks>IP addresses are divided into two parts: the prefix and the suffix.
+            The address prefix identifies the network portion of an IP address, and the address suffix identifies the host portion.
+            Prefixes are assigned by global authorities, and suffixes are assigned by local system administrators.
+            <para>This enumeration is used by the <see cref="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation"/> and <see cref="T:InTheHand.Net.NetworkInformation.MulticastIPAddressInformation"/> classes.
+            Instances of this class are returned when you retrieve the address information for a <see cref="T:InTheHand.Net.NetworkInformation.NetworkInterface"/> object.</para></remarks>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.PrefixOrigin.Other">
+            <summary>
+            The prefix was located using an unspecified source.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.PrefixOrigin.Manual">
+            <summary>
+            The prefix was manually configured.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.PrefixOrigin.WellKnown">
+            <summary>
+            The prefix is a well-known prefix.
+            Well-known prefixes are specified in standard-track Request for Comments (RFC) documents and assigned by the Internet Assigned Numbers Authority (Iana) or an address registry.
+            Such prefixes are reserved for special purposes.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.PrefixOrigin.Dhcp">
+            <summary>
+            The prefix was supplied by a Dynamic Host Configuration Protocol (DHCP) server.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.PrefixOrigin.RouterAdvertisement">
+            <summary>
+            The prefix was supplied by a router advertisement.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.SuffixOrigin">
+            <summary>
+            Specifies how an IP address host suffix was located.
+            </summary>
+            <remarks>IP addresses are divided into two parts: the prefix and the suffix.
+            The address prefix identifies the network portion of an IP address, and the address suffix identifies the host portion.
+            Prefixes are assigned by global authorities, and suffixes are assigned by local system administrators.
+            <para>This enumeration is used by the <see cref="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation"/> and <see cref="T:InTheHand.Net.NetworkInformation.MulticastIPAddressInformation"/> classes.
+            Instances of this class are returned when you retrieve the address information for a <see cref="T:InTheHand.Net.NetworkInformation.NetworkInterface"/> object.</para></remarks>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.SuffixOrigin.Other">
+            <summary>
+            The suffix was located using an unspecified source.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.SuffixOrigin.Manual">
+            <summary>
+            The suffix was manually configured.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.SuffixOrigin.WellKnown">
+            <summary>
+            The suffix is a well-known suffix.
+            Well-known suffixes are specified in standard-track Request for Comments (RFC) documents and assigned by the Internet Assigned Numbers Authority (Iana) or an address registry.
+            Such suffixes are reserved for special purposes.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.SuffixOrigin.OriginDhcp">
+            <summary>
+            The suffix was supplied by a Dynamic Host Configuration Protocol (DHCP) server.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.SuffixOrigin.LinkLayerAddress">
+            <summary>
+            The suffix is a link-local suffix.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.SuffixOrigin.Random">
+            <summary>
+            The suffix was randomly assigned.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.DuplicateAddressDetectionState">
+            <summary>
+            Specifies the current state of an IP address.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.DuplicateAddressDetectionState.Invalid">
+            <summary>
+            The address is not valid.
+            A nonvalid address is expired and no longer assigned to an interface; applications should not send data packets to it.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.DuplicateAddressDetectionState.Tentative">
+            <summary>
+            The duplicate address detection procedure's evaluation of the address has not completed successfully.
+            Applications should not use the address because it is not yet valid and packets sent to it are discarded.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.DuplicateAddressDetectionState.Duplicate">
+            <summary>
+            The address is not unique.
+            This address should not be assigned to the network interface.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.DuplicateAddressDetectionState.Deprecated">
+            <summary>
+            The address is valid, but it is nearing its lease lifetime and should not be used by applications.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.DuplicateAddressDetectionState.Preferred">
+            <summary>
+            The address is valid and its use is unrestricted.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPAddressInformation">
+            <summary>
+            Provides information about a network interface address.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPAddressInformation.Address">
+            <summary>
+            Gets the Internet Protocol (IP) address.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPAddressInformation.IsDnsEligible">
+            <summary>
+            Gets a Boolean value that indicates whether the Internet Protocol (IP) address is valid to appear in a Domain Name System (DNS) server database.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPAddressInformation.IsTransient">
+            <summary>
+            Gets a Boolean value that indicates whether the Internet Protocol (IP) address is transient (a cluster address).
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation">
+            <summary>
+            Provides information about a network interface's unicast address.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation.AddressPreferredLifetime">
+            <summary>
+            Gets the number of seconds remaining during which this address is the preferred address.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation.AddressValidLifetime">
+            <summary>
+            Gets the number of seconds remaining during which this address is valid.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation.DhcpLeaseLifetime">
+            <summary>
+            Specifies the amount of time remaining on the Dynamic Host Configuration Protocol (DHCP) lease for this IP address.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation.DuplicateAddressDetectionState">
+            <summary>
+            Gets a value that indicates the state of the duplicate address detection algorithm.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation.PrefixOrigin">
+            <summary>
+            Gets a value that identifies the source of a unicast Internet Protocol (IP) address prefix.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation.SuffixOrigin">
+            <summary>
+            Gets a value that identifies the source of a unicast Internet Protocol (IP) address suffix.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.Ping">
+            <summary>
+            Allows an application to determine whether a remote computer is accessible over the network.
+            </summary>
+            <remarks>Applications use the Ping class to detect whether a remote computer is reachable. 
+            <para>Network topology can determine whether Ping can successfully contact a remote host. 
+            The presence and configuration of proxies, network address translation (NAT) equipment, or firewalls can prevent Ping from succeeding. 
+            A successful Ping indicates only that the remote host can be reached on the network; the presence of higher level services (such as a Web server) on the remote host is not guaranteed.</para>
+            The <see cref="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)"/> method send an Internet Control Message Protocol (ICMP) echo request message to a remote computer and waits for an ICMP echo reply message from that computer. 
+            For a detailed description of ICMP messages, see RFC 792, available at <a href="http://www.ietf.org">http://www.ietf.org</a>.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.0 and later</description></item>
+            </list>
+            </remarks>
+            <example>The following code example demonstrates using the Ping class.
+            <code lang="cs">
+            using System;
+            using System.Net;
+            using InTheHand.Net.NetworkInformation;
+            using System.Text;
+            
+            namespace Examples.InTheHand.Net.NetworkInformation.PingTest
+            {
+                public class PingExample
+                {
+                    // args[0] can be an IPaddress or host name.
+                    public static void Main (string[] args)
+                    {
+                        Ping pingSender = new Ping ();
+                        PingOptions options = new PingOptions ();
+                        // change the fragmentation behavior.
+                        options.DontFragment = true;
+            
+                        // Create a buffer of 32 bytes of data to be transmitted.
+                        string data = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+                        byte[] buffer = Encoding.ASCII.GetBytes (data);
+                        int timeout = 120;
+                        PingReply reply = pingSender.Send (args[0], timeout, buffer, options);
+                        if (reply.Status == IPStatus.Success)
+                        {
+                            string message = string.Format("Address: {0}\r\nRoundTrip time: {1}\r\nTime to live: {2}\r\nDon't fragment: {3}\r\nBuffer size: {0}",
+                                reply.Address.ToString(),
+                                reply.RoundtripTime,
+                                reply.Options.Ttl,
+                                reply.Options.DontFragment,
+                                reply.Buffer.Length);
+                            MessageBox.Show(message, "Ping");
+                        }
+                        else
+                        {
+                            MessageBox.Show(reply.Status.ToString(), "Ping");
+                        }
+                    }
+                }
+            }</code></example>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message to the specified computer, and receive a corresponding ICMP echo reply message from that computer.
+            </summary>
+            <param name="hostNameOrAddress">A <see cref="T:System.String"/> that identifies the computer that is the destination for the ICMP echo message.
+            The value specified for this parameter can be a host name or a string representation of an IP address.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message, if one was received, or provides the reason for the failure, if no message was received.</returns>
+            <exception cref="T:System.ArgumentNullException">hostNameOrAddress is a null reference (Nothing in Visual Basic).</exception>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.Net.IPAddress)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message to the computer that has the specified <see cref="T:System.Net.IPAddress"/>, and receive a corresponding ICMP echo reply message from that computer. 
+            </summary>
+            <param name="address">An <see cref="T:System.Net.IPAddress"/> that identifies the computer that is the destination for the ICMP echo message.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message, if one was received, or describes the reason for the failure if no message was received.</returns>
+            <exception cref="T:System.ArgumentNullException">address is a null reference (Nothing in Visual Basic).</exception>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message with the specified data buffer to the computer that has the specified <see cref="T:System.Net.IPAddress"/>, and receive a corresponding ICMP echo reply message from that computer. This overload allows you to specify a time-out value for the operation. 
+            </summary>
+            <param name="address">An <see cref="T:System.Net.IPAddress"/> that identifies the computer that is the destination for the ICMP echo message.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message if one was received, or provides the reason for the failure if no message was received.</returns>
+            <exception cref="T:System.ArgumentNullException">address is a null reference (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">timeout is less than zero.</exception>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String,System.Int32)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message to the specified computer, and receive a corresponding ICMP echo reply message from that computer.
+            This overload allows you to specify a time-out value for the operation. 
+            </summary>
+            <param name="hostNameOrAddress">A <see cref="T:System.String"/> that identifies the computer that is the destination for the ICMP echo message.
+            The value specified for this parameter can be a host name or a string representation of an IP address.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message if one was received, or provides the reason for the failure if no message was received.</returns>
+            <exception cref="T:System.ArgumentNullException">hostNameOrAddress is a null reference (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">timeout is less than zero.</exception>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.Net.IPAddress,System.Int32,System.Byte[])">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message with the specified data buffer to the computer that has the specified IPAddress, and receive a corresponding ICMP echo reply message from that computer.
+            This overload allows you to specify a time-out value for the operation. 
+            </summary>
+            <param name="address">An <see cref="T:System.Net.IPAddress"/> that identifies the computer that is the destination for the ICMP echo message.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <param name="buffer">A <see cref="T:System.Byte"/> array that contains data to be sent with the ICMP echo message and returned in the ICMP echo reply message.
+            The array cannot contain more than 65,500 bytes.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message if one was received, or provides the reason for the failure if no message was received.</returns>
+            <exception cref="T:System.ArgumentNullException">address is a null reference (Nothing in Visual Basic).
+            <para>-or-</para>
+            buffer is a null reference (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">timeout is less than zero.</exception>
+            <exception cref="T:System.ArgumentException">The size of buffer exceeds 65500 bytes.
+            <para>-or-</para>
+            address is not a valid IP address.</exception>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String,System.Int32,System.Byte[])">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message with the specified data buffer to the specified computer, and receive a corresponding ICMP echo reply message from that computer. This overload allows you to specify a time-out value for the operation. 
+            </summary>
+            <param name="hostNameOrAddress">A <see cref="T:System.String"/> that identifies the computer that is the destination for the ICMP echo message.
+            The value specified for this parameter can be a host name or a string representation of an IP address.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <param name="buffer">A <see cref="T:System.Byte"/> array that contains data to be sent with the ICMP echo message and returned in the ICMP echo reply message.
+            The array cannot contain more than 65,500 bytes.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message if one was received, or provides the reason for the failure if no message was received.</returns>
+            <exception cref="T:System.ArgumentNullException">hostNameOrAddress is a null reference (Nothing in Visual Basic).
+            <para>-or-</para>
+            buffer is a null reference (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">timeout is less than zero.</exception>
+            <exception cref="T:System.ArgumentException">The size of buffer exceeds 65500 bytes.
+            <para>-or-</para>
+            address is not a valid IP address.</exception>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.Net.IPAddress,System.Int32,System.Byte[],InTheHand.Net.NetworkInformation.PingOptions)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message with the specified data buffer to the computer that has the specified IPAddress and receive a corresponding ICMP echo reply message from that computer. This overload allows you to specify a time-out value for the operation and control fragmentation and Time-to-Live values for the ICMP echo message packet. 
+            </summary>
+            <param name="address">An <see cref="T:System.Net.IPAddress"/> that identifies the computer that is the destination for the ICMP echo message.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <param name="buffer">A <see cref="T:System.Byte"/> array that contains data to be sent with the ICMP echo message and returned in the ICMP echo reply message.
+            The array cannot contain more than 65,500 bytes.</param>
+            <param name="options">A <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> object used to control fragmentation and Time-to-Live values for the ICMP echo message packet.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message, if one was received, or provides the reason for the failure, if no message was received.
+            The method will return PacketTooBig if the packet exceeds the Maximum Transmission Unit (MTU). </returns>
+            <exception cref="T:System.ArgumentNullException">address is a null reference (Nothing in Visual Basic).
+            <para>-or-</para>
+            buffer is a null reference (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">timeout is less than zero.</exception>
+            <exception cref="T:System.ArgumentException">The size of buffer exceeds 65500 bytes.
+            <para>-or-</para>
+            address is not a valid IP address.</exception>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String,System.Int32,System.Byte[],InTheHand.Net.NetworkInformation.PingOptions)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message with the specified data buffer to the specified computer, and receive a corresponding ICMP echo reply message from that computer.
+            This overload allows you to specify a time-out value for the operation and control fragmentation and Time-to-Live values for the ICMP packet. 
+            </summary>
+            <param name="hostNameOrAddress">A <see cref="T:System.String"/> that identifies the computer that is the destination for the ICMP echo message.
+            The value specified for this parameter can be a host name or a string representation of an IP address.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <param name="buffer">A <see cref="T:System.Byte"/> array that contains data to be sent with the ICMP echo message and returned in the ICMP echo reply message.
+            The array cannot contain more than 65,500 bytes.</param>
+            <param name="options">A <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> object used to control fragmentation and Time-to-Live values for the ICMP echo message packet.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message, if one was received, or provides the reason for the failure, if no message was received.
+            The method will return PacketTooBig if the packet exceeds the Maximum Transmission Unit (MTU).</returns>
+            <exception cref="T:System.ArgumentNullException">hostNameOrAddress is a null reference (Nothing in Visual Basic).
+            <para>-or-</para>
+            buffer is a null reference (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">timeout is less than zero.</exception>
+            <exception cref="T:System.ArgumentException">The size of buffer exceeds 65500 bytes.
+            <para>-or-</para>
+            address is not a valid IP address.</exception>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.PhysicalAddress">
+            <summary>
+            Provides the Media Access Control (MAC) address for a network interface (adapter).  
+            </summary>
+            <remarks><para>Equivalent to System.Net.NetworkInformation.PhysicalAddress</para>
+            The MAC address, or physical address, is a hardware address that uniquely identifies each node, such as a computer or printer, on a network.
+            Instances of this class are returned by the <see cref="M:InTheHand.Net.NetworkInformation.NetworkInterface.GetPhysicalAddress"/> method.</remarks>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.PhysicalAddress.None">
+            <summary>
+            Returns a new <see cref="T:InTheHand.Net.NetworkInformation.PhysicalAddress"/> instance with a zero length address.
+            </summary>
+            <remarks>The Parse method returns None if you specify a null reference (Nothing in Visual Basic) address.</remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PhysicalAddress.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.PhysicalAddress"/> class.
+            </summary>
+            <param name="address">A Byte array containing the address.</param>
+            <remarks>In common scenarios, applications do not need to call this constructor; instances of this class are returned by the <see cref="M:InTheHand.Net.NetworkInformation.NetworkInterface.GetPhysicalAddress"/> method.
+            Note that you can also use the <see cref="M:InTheHand.Net.NetworkInformation.PhysicalAddress.Parse(System.String)"/> method to create a new instance of <see cref="T:InTheHand.Net.NetworkInformation.PhysicalAddress"/>.</remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PhysicalAddress.Equals(System.Object)">
+            <summary>
+            Compares two <see cref="T:InTheHand.Net.NetworkInformation.PhysicalAddress"/> instances.
+            </summary>
+            <param name="comparand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PhysicalAddress.GetAddressBytes">
+            <summary>
+            Returns the address of the current instance.
+            </summary>
+            <returns>A <see cref="T:System.Byte"/> array containing the address.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PhysicalAddress.GetHashCode">
+            <summary>
+            Returns the hash value of a physical address.
+            </summary>
+            <returns>An integer hash value.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PhysicalAddress.Parse(System.String)">
+            <summary>
+            Parses the specified <see cref="T:System.String"/> and stores its contents as the address bytes of the <see cref="T:InTheHand.Net.NetworkInformation.PhysicalAddress"/> returned by this method.
+            </summary>
+            <param name="address">A <see cref="T:System.String"/> containing the address that will be used to initialize the <see cref="T:InTheHand.Net.NetworkInformation.PhysicalAddress"/> instance returned by this method.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PhysicalAddress"/> instance with the specified address.</returns>
+            <remarks>Use the <see cref="M:InTheHand.Net.NetworkInformation.PhysicalAddress.GetAddressBytes"/> method to retrieve the address from an existing <see cref="T:InTheHand.Net.NetworkInformation.PhysicalAddress"/> instance.</remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PhysicalAddress.ToString">
+            <summary>
+            Returns the <see cref="T:System.String"/> representation of the address of this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics">
+            <summary>
+            Provides statistical data for a network interface on the local computer.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.BytesReceived">
+            <summary>
+            Gets the number of bytes that were received on the interface.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.BytesSent">
+            <summary>
+            Gets the number of bytes that were sent on the interface.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.IncomingPacketsDiscarded">
+            <summary>
+            Gets the number of incoming packets that were discarded.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.IncomingPacketsWithErrors">
+            <summary>
+            Gets the number of incoming packets with errors.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.IncomingUnknownProtocolPackets">
+            <summary>
+            Gets the number of incoming packets with an unknown protocol.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.NonUnicastPacketsReceived">
+            <summary>
+            Gets the number of non-unicast packets that were received on the interface.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.NonUnicastPacketsSent">
+            <summary>
+            Gets the number of non-unicast packets that were sent on the interface.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.OutgoingPacketsDiscarded">
+            <summary>
+            Gets the number of outgoing packets that were discarded.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.OutgoingPacketsWithErrors">
+            <summary>
+            Gets the number of outgoing packets with errors.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.OutputQueueLength">
+            <summary>
+            Gets the length of the output queue.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.UnicastPacketsReceived">
+            <summary>
+            Gets the number of unicast packets that were received on the interface.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics.UnicastPacketsSent">
+            <summary>
+            Gets the number of unicast packets that were sent on the interface.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection">
+            <summary>
+            Stores a set of <see cref="T:InTheHand.Net.NetworkInformation.MulticastIPAddressInformation"/> types.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection.Add(InTheHand.Net.NetworkInformation.MulticastIPAddressInformation)">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection.Clear">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection.Contains(InTheHand.Net.NetworkInformation.MulticastIPAddressInformation)">
+            <summary>
+            Checks whether the collection contains the specified <see cref="T:InTheHand.Net.NetworkInformation.MulticastIPAddressInformation"/> object.
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection.CopyTo(InTheHand.Net.NetworkInformation.MulticastIPAddressInformation[],System.Int32)">
+            <summary>
+            Copies the elements in this collection to a one-dimensional array of type <see cref="T:InTheHand.Net.NetworkInformation.MulticastIPAddressInformation"/>.
+            </summary>
+            <param name="array"></param>
+            <param name="offset"></param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection.GetEnumerator">
+            <summary>
+            Returns an object that can be used to iterate through this collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection.Remove(InTheHand.Net.NetworkInformation.MulticastIPAddressInformation)">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an object that can be used to iterate through this collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection.Count">
+            <summary>
+            Gets the number of <see cref="T:InTheHand.Net.NetworkInformation.MulticastIPAddressInformation"/> types in this collection.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection.IsReadOnly">
+            <summary>
+            Gets a value that indicates whether access to this collection is read-only.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.MulticastIPAddressInformationCollection.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:InTheHand.Net.NetworkInformation.MulticastIPAddressInformation"/> instance at the specified index in the collection.
+            </summary>
+            <param name="index">The zero-based index of the element.</param>
+            <returns>The <see cref="T:InTheHand.Net.NetworkInformation.MulticastIPAddressInformation"/> at the specified location.</returns>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.NetworkInterface">
+            <summary>
+            Provides configuration and statistical information for a network interface.
+            </summary>
+            <remarks>This class encapsulates data for network interfaces, also known as adapters, on the local computer.
+            You do not create instances of this class; the <see cref="M:InTheHand.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces"/> method returns an array that contains one instance of this class for each network interface on the local computer.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces">
+            <summary>
+            Returns objects that describe the network interfaces on the local computer.
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.NetworkInterface"/> array that contains objects that describe the available network interfaces, or an empty array if no interfaces are detected.</returns>
+            <remarks>
+            The network interfaces on a computer provide network connectivity.
+            Network interfaces are also known as network adapters.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable">
+            <summary>
+            Indicates whether any network connection is available.
+            </summary>
+            <returns>true if a network connection is available; otherwise, false.</returns>
+            <remarks>A network connection is considered to be available if any network interface is marked "up" and is not a loopback interface.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.NetworkInterface.GetPhysicalAddress">
+            <summary>
+            Returns the Media Access Control (MAC) address for this adapter.
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PhysicalAddress"/> object that contains the physical address.</returns>
+            <remarks>The object returned by this method contains an address that is appropriate to the media used to transport data at the data link layer.
+            For example, on an Ethernet network, this method returns the Ethernet address.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.NetworkInterface.GetIPv4Statistics">
+            <summary>
+            Gets the IPv4 statistics.
+            </summary>
+            <returns>An <see cref="T:InTheHand.Net.NetworkInformation.IPv4InterfaceStatistics"/> object.</returns>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.NetworkInterface.GetIPProperties">
+            <summary>
+            Returns an object that describes the configuration of this network interface.
+            </summary>
+            <returns>An <see cref="T:InTheHand.Net.NetworkInformation.IPInterfaceProperties"/> object that describes this network interface.</returns>
+            <remarks>Note that the information in the object returned by this method reflects the interfaces as of the time the array is created.
+            This information is not updated dynamically.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list></remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.NetworkInterface.Name">
+            <summary>
+            Gets the name of the network adapter.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.NetworkInterface.Description">
+            <summary>
+            Gets the description of the interface.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.NetworkInterface.NetworkInterfaceType">
+            <summary>
+            Gets the interface type.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.NetworkInterface.OperationalStatus">
+            <summary>
+            Gets the current operational state of the network connection.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.NetworkInterface.Speed">
+            <summary>
+            Gets the speed of the network interface.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPStatus">
+            <summary>
+            Reports the status of sending an Internet Control Message Protocol (ICMP) echo message to a computer. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.Success">
+            <summary>
+            The ICMP echo request succeeded; an ICMP echo reply was received. When you get this status code, the other <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> properties contain valid data. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationNetworkUnreachable">
+            <summary>
+            The ICMP echo request failed because the network that contains the destination computer is not reachable. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationHostUnreachable">
+            <summary>
+            The ICMP echo request failed because the destination computer is not reachable.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationProhibited">
+            <summary>
+            The ICMP echo request failed because contact with the destination computer is administratively prohibited.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationProtocolUnreachable">
+            <summary>
+            The ICMP echo request failed because the destination computer that is specified in an ICMP echo message is not reachable, because it does not support the packet's protocol. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationPortUnreachable">
+            <summary>
+            The ICMP echo request failed because the port on the destination computer is not available. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.NoResources">
+            <summary>
+            The ICMP echo request failed because of insufficient network resources. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.BadOption">
+            <summary>
+            The ICMP echo request failed because it contains an invalid option. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.HardwareError">
+            <summary>
+            The ICMP echo request failed because of a hardware error. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.PacketTooBig">
+            <summary>
+            The ICMP echo request failed because the packet containing the request is larger than the maximum transmission unit (MTU) of a node (router or gateway) located between the source and destination.
+            The MTU defines the maximum size of a transmittable packet. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.TimedOut">
+            <summary>
+            The ICMP echo Reply was not received within the allotted time.
+            The default time allowed for replies is 5 seconds.
+            You can change this value using the Send method that take a timeout parameter. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.BadRoute">
+            <summary>
+            The ICMP echo request failed because there is no valid route between the source and destination computers. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.TtlExpired">
+            <summary>
+            The ICMP echo request failed because its Time to Live (TTL) value reached zero, causing the forwarding node (router or gateway) to discard the packet. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.TtlReassemblyTimeExceeded">
+            <summary>
+            The ICMP echo request failed because the packet was divided into fragments for transmission and all of the fragments were not received within the time allotted for reassembly.
+            RFC 2460 (available at www.ietf.org) specifies 60 seconds as the time limit within which all packet fragments must be received. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.ParameterProblem">
+            <summary>
+            The ICMP echo request failed because a node (router or gateway) encountered problems while processing the packet header. This is the status if, for example, the header contains invalid field data or an unrecognized option. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.SourceQuench">
+            <summary>
+            The ICMP echo request failed because the packet was discarded.
+            This occurs when the source computer's output queue has insufficient storage space, or when packets arrive at the destination too quickly to be processed. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.BadDestination">
+            <summary>
+            The ICMP echo request failed because the destination IP address cannot receive ICMP echo requests or should never appear in the destination address field of any IP datagram.
+            For example, calling <see cref="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)"/> and specifying IP address "000.0.0.0" returns this status. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationUnreachable">
+            <summary>
+            The ICMP echo request failed because the destination computer that is specified in an ICMP echo message is not reachable; the exact cause of problem is unknown. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.TimeExceeded">
+            <summary>
+            The ICMP echo request failed because its Time to Live (TTL) value reached zero, causing the forwarding node (router or gateway) to discard the packet. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.BadHeader">
+            <summary>
+            The ICMP echo request failed because the header is invalid. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.UnrecognizedNextHeader">
+            <summary>
+            The ICMP echo request failed because the Next Header field does not contain a recognized value.
+            The Next Header field indicates the extension header type (if present) or the protocol above the IP layer, for example, TCP or UDP. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.IcmpError">
+            <summary>
+            The ICMP echo request failed because of an ICMP protocol error. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationScopeMismatch">
+            <summary>
+            The ICMP echo request failed because the source address and destination address that are specified in an ICMP echo message are not in the same scope. This is typically caused by a router forwarding a packet using an interface that is outside the scope of the source address.
+            Address scopes (link-local, site-local, and global scope) determine where on the network an address is valid. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.Unknown">
+            <summary>
+            The ICMP echo request failed for an unknown reason. 
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPGlobalProperties">
+            <summary>
+            Provides information about the network connectivity of the local computer.
+            </summary>
+            <remarks>This class provides configuration and statistical information about the local computer's network interfaces and network connections.
+            <para>The information provided by this class is similar to that provided by the Internet Protocol Helper API functions. 
+            For information about the Internet Protocol Helper, see the documentation in the MSDN Library.</para>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+            <example>
+            The following code example displays information about the local computer using an instance of this class.
+            <code lang="vbnet">
+            Public Shared Sub ShowInboundIPStatistics() 
+                Dim properties As IPGlobalProperties = IPGlobalProperties.GetIPGlobalProperties()
+                Dim ipstat As IPGlobalStatistics = properties.GetIPv4GlobalStatistics()
+                Console.WriteLine("  Inbound Packet Data:")
+                Console.WriteLine("      Received ............................ : {0}", ipstat.ReceivedPackets)
+                Console.WriteLine("      Forwarded ........................... : {0}", ipstat.ReceivedPacketsForwarded)
+                Console.WriteLine("      Delivered ........................... : {0}", ipstat.ReceivedPacketsDelivered)
+                Console.WriteLine("      Discarded ........................... : {0}", ipstat.ReceivedPacketsDiscarded)
+            End Sub 'ShowInboundIPStatistics
+            </code>
+            <code lang="cs">
+            public static void ShowInboundIPStatistics()
+            {
+                IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+                IPGlobalStatistics ipstat = properties.GetIPv4GlobalStatistics();
+                Console.WriteLine("  Inbound Packet Data:");
+                Console.WriteLine("      Received ............................ : {0}", 
+                ipstat.ReceivedPackets);
+                Console.WriteLine("      Forwarded ........................... : {0}", 
+                ipstat.ReceivedPacketsForwarded);
+                Console.WriteLine("      Delivered ........................... : {0}", 
+                ipstat.ReceivedPacketsDelivered);
+                Console.WriteLine("      Discarded ........................... : {0}", 
+                ipstat.ReceivedPacketsDiscarded);   
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties">
+            <summary>
+            Gets an object that provides information about the local computer's network connectivity and traffic statistics. 
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.IPGlobalProperties"/> object that contains information about the local computer.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIcmpV4Statistics">
+            <summary>
+            Provides Internet Control Message Protocol (ICMP) version 4 statistical data for the local computer.
+            </summary>
+            <returns>An <see cref="T:InTheHand.Net.NetworkInformation.IcmpV4Statistics"/> object that provides ICMP version 4 traffic statistics for the local computer.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIcmpV6Statistics">
+            <summary>
+            Provides Internet Control Message Protocol (ICMP) version 6 statistical data for the local computer.
+            </summary>
+            <returns>An <see cref="T:InTheHand.Net.NetworkInformation.IcmpV6Statistics"/> object that provides ICMP version 6 traffic statistics for the local computer.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIPv4GlobalStatistics">
+            <summary>
+            Provides Internet Protocol version 4 (IPv4) statistical data for the local computer. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIPv6GlobalStatistics">
+            <summary>
+            Provides Internet Protocol version 6 (IPv6) statistical data for the local computer. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetTcpIPv4Statistics">
+            <summary>
+            Provides Transmission Control Protocol/Internet Protocol version 4 (TCP/IPv4) statistical data for the local computer. 
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.TcpStatistics"/> object that provides TCP/IPv4 traffic statistics for the local computer. </returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetTcpIPv6Statistics">
+            <summary>
+            Provides Transmission Control Protocol/Internet Protocol version 6 (TCP/IPv6) statistical data for the local computer. 
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.TcpStatistics"/> object that provides TCP/IPv6 traffic statistics for the local computer. </returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetActiveTcpConnections">
+            <summary>
+            Returns information about the Internet Protocol version 4 (IPV4) Transmission Control Protocol (TCP) connections on the local computer.
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.TcpConnectionInformation"/> array that contains objects that describe the active TCP connections, or an empty array if no active TCP connections are detected.</returns>
+            <remarks>The objects returned by this method include listeners in all TCP states except the <see cref="F:InTheHand.Net.NetworkInformation.TcpState.Listen"/> state. 
+            The TCP protocol is defined in IETF RFC 793.
+            Note that the objects returned by this method reflect the connections as of the time the array is created.
+            This information is not updated dynamically.</remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetActiveTcpListeners">
+            <summary>
+            Returns endpoint information about the Internet Protocol version 4 (IPV4) Transmission Control Protocol (TCP) listeners on the local computer.
+            </summary>
+            <returns>A <see cref="T:System.Net.IPEndPoint"/> array that contains objects that describe the active TCP listeners, or an empty array, if no active TCP listeners are detected.</returns>
+            <remarks>The objects returned by this method include listeners in the <see cref="F:InTheHand.Net.NetworkInformation.TcpState.Listen"/> state. 
+            The TCP protocol is defined in IETF RFC 793.
+            Note that the objects returned by this method reflect the connections as of the time the array is created.
+            This information is not updated dynamically.</remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetActiveUdpListeners">
+            <summary>
+            Returns information about the Internet Protocol version 4 (IPv4) User Datagram Protocol (UDP) listeners on the local computer.
+            </summary>
+            <returns>An IPEndPoint array that contains objects that describe the UDP listeners, or an empty array if no UDP listeners are detected.</returns>
+            <remarks>UDP is a connectionless transport layer protocol that is responsible for sending and receiving datagrams.
+            It is defined in IETF RFC 768.
+            A UDP listener is an open socket that waits for and receives UDP datagrams.
+            Because UDP is a connectionless protocol, the listener does not maintain a connection to a remote endpoint.</remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetUdpIPv4Statistics">
+            <summary>
+            Provides User Datagram Protocol/Internet Protocol version 4 (UDP/IPv4) statistical data for the local computer. 
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.UdpStatistics"/> object that provides UDP/IPv4 traffic statistics for the local computer.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetUdpIPv6Statistics">
+            <summary>
+            Provides User Datagram Protocol/Internet Protocol version 6 (UDP/IPv6) statistical data for the local computer. 
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.UdpStatistics"/> object that provides UDP/IPv6 traffic statistics for the local computer.</returns>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.HostName">
+            <summary>
+            Gets the host name for the local computer.
+            </summary>
+            <value>A <see cref="T:System.String"/> instance that contains the computer's NetBIOS name.</value>
+            <exception cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException">A Win32 function call failed.</exception>
+            <remarks>A computer's NetBIOS name must be unique within a network and is not fully qualified by the domain name.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.DomainName">
+            <summary>
+            Gets the domain in which the local computer is registered.
+            </summary>
+            <value>A <see cref="T:System.String"/> instance that contains the computer's domain name.
+            If the computer does not belong to a domain, returns <see cref="F:System.String.Empty"/>.</value>
+            <exception cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException">A Win32 function call failed.</exception>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.DhcpScopeName">
+            <summary>
+            Gets the Dynamic Host Configuration Protocol (DHCP) scope name.
+            </summary>
+            <value>A <see cref="T:System.String"/> instance that contains the computer's DHCP scope name.</value>
+            <exception cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException">A Win32 function call failed.</exception>
+            <remarks>A DHCP scope is an administrative grouping of networked computers that are on the same subnet.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.IsWinsProxy">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value that specifies whether the local computer is acting as a Windows Internet Name Service (WINS) proxy.
+            </summary>
+            <value>true if the local computer is a WINS proxy; otherwise, false.</value>
+            <exception cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException">A Win32 function call failed.</exception>
+            <remarks>WINS provides a distributed database for registering and querying dynamic NetBIOS names to IP address mappings.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.NodeType">
+            <summary>
+            Gets the Network Basic Input/Output System (NetBIOS) node type of the local computer.
+            </summary>
+            <value>A <see cref="T:InTheHand.Net.NetworkInformation.NetBiosNodeType"/> value.</value>
+            <exception cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException">A Win32 function call failed.</exception>
+            <remarks>The node type determines the way in which NetBIOS names are resolved to IP addresses. 
+            For additional information, see the <see cref="T:InTheHand.Net.NetworkInformation.NetBiosNodeType"/> class overview.</remarks>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IcmpV4Statistics">
+            <summary>
+            Provides Internet Control Message Protocol for IPv4 (ICMPv4) statistical data for the local computer.
+            </summary>
+            <remarks>
+            ICMPv4 is a set of error and informational messages for use with Internet Protocol version 4. 
+            ICMP version 4 is defined in IETF RFC 792.
+            This class is used by the <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIcmpV4Statistics"/> method to return ICMPv4 traffic information.
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+            <example>
+            The following example displays the current ICMPv4 statistics.
+            <code lang="cs">
+            public static void ShowIcmpV4Statistics()
+            {
+                IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+                IcmpV4Statistics stat = properties.GetIcmpV4Statistics();
+                Console.WriteLine("ICMP V4 Statistics:");
+            
+                Console.WriteLine("  Messages ............................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.MessagesSent, stat.MessagesReceived);
+                Console.WriteLine("  Errors .............................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.ErrorsSent, stat.ErrorsReceived);
+            
+                Console.WriteLine("  Echo Requests ....................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.EchoRequestsSent, stat.EchoRequestsReceived);
+                Console.WriteLine("  Echo Replies ........................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.EchoRepliesSent, stat.EchoRepliesReceived);
+            
+                Console.WriteLine("  Destination Unreachables ............ Sent: {0,-10}   Received: {1,-10}",
+                    stat.DestinationUnreachableMessagesSent, stat.DestinationUnreachableMessagesReceived);
+            
+                Console.WriteLine("  Source Quenches ..................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.SourceQuenchesSent, stat.SourceQuenchesReceived);
+            
+                Console.WriteLine("  Redirects ........................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.RedirectsSent, stat.RedirectsReceived);  
+            
+                Console.WriteLine("  TimeExceeded ........................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.TimeExceededMessagesSent, stat.TimeExceededMessagesReceived);
+            
+                Console.WriteLine("  Parameter Problems .................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.ParameterProblemsSent, stat.ParameterProblemsReceived);   
+            
+                Console.WriteLine("  Timestamp Requests .................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.TimestampRequestsSent, stat.TimestampRequestsReceived);    
+                Console.WriteLine("  Timestamp Replies ................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.TimestampRepliesSent, stat.TimestampRepliesReceived);    
+                
+                Console.WriteLine("  Address Mask Requests ............... Sent: {0,-10}   Received: {1,-10}",
+                    stat.AddressMaskRequestsSent, stat.AddressMaskRequestsReceived);    
+                Console.WriteLine("  Address Mask Replies ................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.AddressMaskRepliesSent, stat.AddressMaskRepliesReceived);                    
+                Console.WriteLine("");    
+            }</code></example>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.AddressMaskRepliesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Address Mask Reply messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.AddressMaskRepliesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Address Mask Reply messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.AddressMaskRequestsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Address Mask Request messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.AddressMaskRequestsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Address Mask Request messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.DestinationUnreachableMessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) messages that were received because of a packet having an unreachable address in its destination.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.DestinationUnreachableMessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) messages that were sent because of a packet having an unreachable address in its destination.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.EchoRepliesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Echo Reply messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.EchoRepliesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Echo Reply messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.EchoRequestsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Echo Request messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.EchoRequestsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Echo Request messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.ErrorsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) error messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.ErrorsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) error messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.MessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.MessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.ParameterProblemsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Parameter Problem messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.ParameterProblemsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Parameter Problem messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.RedirectsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Redirect messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.RedirectsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Redirect messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.SourceQuenchesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Source Quench messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.SourceQuenchesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Source Quench messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimeExceededMessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Time Exceeded messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimeExceededMessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Time Exceeded messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimestampRepliesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Timestamp Reply messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimestampRepliesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Timestamp Reply messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimestampRequestsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Timestamp Request messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimestampRequestsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Timestamp Request messages that were sent.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IcmpV6Statistics">
+            <summary>
+            Provides Internet Control Message Protocol for Internet Protocol version 6 (ICMPv6) statistical data for the local computer.
+            </summary>
+            <remarks><para>Equivalent to <b>System.Net.NetworkInformation.IcmpV6Statistics</b></para>
+            ICMPV6 is a set of error and informational messages for use with Internet Protocol version 6 (IPv6). 
+            This class is used by the <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIcmpV6Statistics"/> method to return ICMPV6 traffic information.
+            <para>ICMPv6 is defined in RFC 2463.</para>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list>
+            </remarks>
+            <example>The following example displays the current ICMPv6 statistics.
+            <code lang="cs">
+            public static void ShowIcmpV6Statistics()
+            {
+                IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+                IcmpV6Statistics stat = properties.GetIcmpV6Statistics();
+                Console.WriteLine("ICMP V6 Statistics:");
+                Console.WriteLine("  Messages ............................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.MessagesSent, stat.MessagesReceived);
+                Console.WriteLine("  Errors .............................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.ErrorsSent, stat.ErrorsReceived);
+            
+                Console.WriteLine("  Echo Requests ....................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.EchoRequestsSent, stat.EchoRequestsReceived);
+                Console.WriteLine("  Echo Replies ........................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.EchoRepliesSent, stat.EchoRepliesReceived);
+            
+                Console.WriteLine("  Destination Unreachables ............ Sent: {0,-10}   Received: {1,-10}",
+                    stat.DestinationUnreachableMessagesSent, stat.DestinationUnreachableMessagesReceived);
+            
+                Console.WriteLine("  Parameter Problems .................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.ParameterProblemsSent, stat.ParameterProblemsReceived);       
+            
+                Console.WriteLine("  Packets Too Big ..................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.PacketTooBigMessagesSent, stat.PacketTooBigMessagesReceived);
+            
+                Console.WriteLine("  Redirects ........................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.RedirectsSent, stat.RedirectsReceived);
+            
+                Console.WriteLine("  Router Advertisements ............... Sent: {0,-10}   Received: {1,-10}",
+                    stat.RouterAdvertisementsSent, stat.RouterAdvertisementsReceived);                    
+                Console.WriteLine("  Router Solicitations ................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.RouterSolicitsSent, stat.RouterSolicitsReceived);   
+            
+                Console.WriteLine("  Time Exceeded ....................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.TimeExceededMessagesSent, stat.TimeExceededMessagesReceived);
+            
+                Console.WriteLine("  Neighbor Advertisements ............. Sent: {0,-10}   Received: {1,-10}",
+                    stat.NeighborAdvertisementsSent, stat.NeighborAdvertisementsReceived);        
+                Console.WriteLine("  Neighbor Solicitations .............. Sent: {0,-10}   Received: {1,-10}",
+                    stat.NeighborSolicitsSent, stat.NeighborSolicitsReceived);    
+            
+                Console.WriteLine("  Membership Queries .................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.MembershipQueriesSent, stat.MembershipQueriesReceived);    
+                Console.WriteLine("  Membership Reports .................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.MembershipReportsSent, stat.MembershipReportsReceived);    
+                Console.WriteLine("  Membership Reductions ............... Sent: {0,-10}   Received: {1,-10}",
+                    stat.MembershipReductionsSent, stat.MembershipReductionsReceived);    
+            
+                Console.WriteLine("");
+            }</code></example>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.DestinationUnreachableMessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) messages that were received because of a packet having an unreachable address in its destination.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.DestinationUnreachableMessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) messages that were sent because of a packet having an unreachable address in its destination.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.EchoRepliesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Echo Reply messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.EchoRepliesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Echo Reply messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.EchoRequestsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Echo Request messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.EchoRequestsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Echo Request messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.ErrorsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) error messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.ErrorsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) error messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.MessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.MessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.ParameterProblemsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Parameter Problem messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.ParameterProblemsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Parameter Problem messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.RedirectsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Redirect messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.RedirectsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Redirect messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.TimeExceededMessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Time Exceeded messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.TimeExceededMessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Time Exceeded messages that were sent.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPAddressInformationCollection">
+            <summary>
+            Stores a set of <see cref="T:InTheHand.Net.NetworkInformation.IPAddressInformation"/> types.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressInformationCollection.Add(InTheHand.Net.NetworkInformation.IPAddressInformation)">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressInformationCollection.Clear">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressInformationCollection.Contains(InTheHand.Net.NetworkInformation.IPAddressInformation)">
+            <summary>
+            Checks whether the collection contains the specified <see cref="T:InTheHand.Net.NetworkInformation.IPAddressInformation"/> object.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressInformationCollection.CopyTo(InTheHand.Net.NetworkInformation.IPAddressInformation[],System.Int32)">
+            <summary>
+            Copies the elements in this collection to a one-dimensional array of type <see cref="T:InTheHand.Net.NetworkInformation.IPAddressInformation"/>.
+            </summary>
+            <param name="array">A one-dimensional array that receives a copy of the collection.</param>
+            <param name="arrayIndex">The zero-based index in array at which the copy begins.</param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressInformationCollection.Remove(InTheHand.Net.NetworkInformation.IPAddressInformation)">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressInformationCollection.GetEnumerator">
+            <summary>
+            Returns an object that can be used to iterate through this collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressInformationCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an object that can be used to iterate through this collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPAddressInformationCollection.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:InTheHand.Net.NetworkInformation.IPAddressInformation"/> instance at the specified index in the collection.
+            </summary>
+            <param name="index">The zero-based index of the element.</param>
+            <returns>The <see cref="T:InTheHand.Net.NetworkInformation.IPAddressInformation"/> at the specified location.</returns>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPAddressInformationCollection.Count">
+            <summary>
+            Gets the number of <see cref="T:InTheHand.Net.NetworkInformation.IPAddressInformation"/> types in this collection.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPAddressInformationCollection.IsReadOnly">
+            <summary>
+            Gets a value that indicates whether access to this collection is read-only.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.NetworkInformationException">
+            <summary>
+            The exception that is thrown when an error occurs while retrieving network information.
+            </summary>
+            <remarks>Types in the InTheHand.Net.NetworkInformation namespace throw this exception when a call to a Win32 function fails.
+            The <see cref="P:InTheHand.Net.NetworkInformation.NetworkInformationException.ErrorCode"/> property contains the result returned by the function.</remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.NetworkInformationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException"/> class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.NetworkInformationException.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException"/> class with the specified error code.
+            </summary>
+            <param name="errorCode">A Win32 error code.</param>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.NetworkInformationException.ErrorCode">
+            <summary>
+            Gets the <b>Win32</b> error code for this exception.
+            </summary>
+            <remarks>The value of this property is set by the constructor.
+            This property is overridden to return a <b>Win32</b> error code instead of an HRESULT value.</remarks>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.OperationalStatus">
+            <summary>
+            Specifies the operational state of a network interface.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.OperationalStatus.Up">
+            <summary>
+            The network interface is up; it can transmit data packets. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.OperationalStatus.Down">
+            <summary>
+            The network interface is unable to transmit data packets. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.OperationalStatus.Testing">
+            <summary>
+            The network interface is running tests. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.OperationalStatus.Unknown">
+            <summary>
+            The network interface status is not known. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.OperationalStatus.Dormant">
+            <summary>
+            The network interface is not in a condition to transmit data packets; it is waiting for an external event. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.OperationalStatus.NotPresent">
+            <summary>
+            The network interface is unable to transmit data packets because of a missing component, typically a hardware component. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.OperationalStatus.LowerLayerDown">
+            <summary>
+            The network interface is unable to transmit data packets because it runs on top of one or more other interfaces, and at least one of these "lower layer" interfaces is down. 
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.PingReply">
+            <summary>
+            Provides information about the status and data resulting from a <see cref="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)"/> operation.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingReply.Address">
+            <summary>
+            Gets the address of the host that sends the Internet Control Message Protocol (ICMP) echo reply.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingReply.Buffer">
+            <summary>
+            Gets the buffer of data received in an Internet Control Message Protocol (ICMP) echo reply message. 
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingReply.Options">
+            <summary>
+            Gets the options used to transmit the reply to an Internet Control Message Protocol (ICMP) echo request. 
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingReply.RoundtripTime">
+            <summary>
+            Gets the number of milliseconds taken to send an Internet Control Message Protocol (ICMP) echo request and receive the corresponding ICMP echo reply message. 
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingReply.Status">
+            <summary>
+            Gets the status of an attempt to send an Internet Control Message Protocol (ICMP) echo request and receive the corresponding ICMP echo reply message. 
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.NetBiosNodeType">
+            <summary>
+            Specifies the Network Basic Input/Output System (NetBIOS) node type. 
+            </summary>
+            <remarks>The node type determines the way in which NetBIOS names are resolved to Internet Protocol (IP) addresses. 
+            The following table shows the name resolution method for each node type.
+            <list type="table">
+            <term>Node type</term><description>Resolve name to IP address </description>
+            <term>Broadcast</term><description>Uses NetBIOS name queries.</description>
+            <term>Peer2Peer</term><description>Uses a NetBIOS name server (NBNS), for example, Windows Internet Name Service (WINS).</description>
+            <term>Mixed</term><description>Attempts to resolve by first using NetBIOS name queries and then using an NBNS.</description>
+            <term>Hybrid</term><description>Attempts to resolve by first using an NBNS and then using a NetBIOS name query.</description>
+            </list>  
+            This enumeration is used to specify values for the <see cref="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.NodeType"/> property.</remarks>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetBiosNodeType.Unknown">
+            <summary>
+            An unknown node type.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetBiosNodeType.Broadcast">
+            <summary>
+            A broadcast node.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetBiosNodeType.Peer2Peer">
+            <summary>
+            A peer-to-peer node.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetBiosNodeType.Mixed">
+            <summary>
+            A mixed node.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetBiosNodeType.Hybrid">
+            <summary>
+            A hybrid node.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection">
+            <summary>
+            Stores a set of <see cref="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation"/> types.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection.Add(InTheHand.Net.NetworkInformation.UnicastIPAddressInformation)">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection.Clear">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection.Contains(InTheHand.Net.NetworkInformation.UnicastIPAddressInformation)">
+            <summary>
+            Checks whether the collection contains the specified <see cref="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation"/> object.
+            </summary>
+            <param name="address">The <see cref="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation"/> object to be searched in the collection.</param>
+            <returns>true if the <see cref="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation"/> object exists in the collection; otherwise, false.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection.CopyTo(InTheHand.Net.NetworkInformation.UnicastIPAddressInformation[],System.Int32)">
+            <summary>
+            Copies the elements in this collection to a one-dimensional array of type <see cref="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation"/>.
+            </summary>
+            <param name="array"></param>
+            <param name="offset"></param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection.GetEnumerator">
+            <summary>
+            Returns an object that can be used to iterate through this collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection.Remove(InTheHand.Net.NetworkInformation.UnicastIPAddressInformation)">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an object that can be used to iterate through this collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection.Count">
+            <summary>
+            Gets the number of <see cref="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation"/> types in this collection.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection.IsReadOnly">
+            <summary>
+            Gets a value that indicates whether access to this collection is read-only.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UnicastIPAddressInformationCollection.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation"/> instance at the specified index in the collection.
+            </summary>
+            <param name="index">The zero-based index of the element.</param>
+            <returns>The <see cref="T:InTheHand.Net.NetworkInformation.UnicastIPAddressInformation"/> at the specified location.</returns>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.UdpStatistics">
+            <summary>
+            Provides User Datagram Protocol (UDP) statistical data. 
+            </summary>
+            <remarks><para>Equivalent to System.Net.NetworkInformation.UdpStatistics</para>
+            Instances of this class are returned by the <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetUdpIPv4Statistics"/> and <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetUdpIPv6Statistics"/> methods to give applications access to UDP traffic information.
+            The information in this class correlates to the management information objects described in <a href="http://www.ietf.org/rfc/rfc2013.txt"/>.
+            </remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UdpStatistics.DatagramsReceived">
+            <summary>
+            Gets the number of User Datagram Protocol (UDP) datagrams that were received.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of datagrams that were delivered to UDP users.</value>
+            <remarks>The number returned by this property does not include datagrams that were received but not deliverable.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UdpStatistics.DatagramsSent">
+            <summary>
+            Gets the number of User Datagram Protocol (UDP) datagrams that were sent.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of datagrams that were sent.</value>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UdpStatistics.IncomingDatagramsDiscarded">
+            <summary>
+            Gets the number of User Datagram Protocol (UDP) datagrams that were received and discarded because of port errors.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of received UDP datagrams that were discarded because there was no listening application at the destination port.</value>
+            <remarks>To find the total number of datagrams that could not be delivered, add the values that were returned by this property and the <see cref="P:InTheHand.Net.NetworkInformation.UdpStatistics.IncomingDatagramsWithErrors"/> property.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UdpStatistics.IncomingDatagramsWithErrors">
+            <summary>
+            Gets the number of User Datagram Protocol (UDP) datagrams that were received and discarded because of errors other than bad port information.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of received UDP datagrams that could not be delivered for reasons other than the lack of an application at the destination port.</value>
+            <remarks>To find the total number of datagrams that could not be delivered, add the values that were returned by this property and the <see cref="P:InTheHand.Net.NetworkInformation.UdpStatistics.IncomingDatagramsDiscarded"/> property.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UdpStatistics.UdpListeners">
+            <summary>
+            Gets the number of local endpoints that are listening for User Datagram Protocol (UDP) datagrams.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of sockets that are listening for UDP datagrams.</value>
+            <remarks>You can use the <see cref="T:System.Net.Sockets.UdpClient"/> and <see cref="T:System.Net.Sockets.Socket"/> classes to create UDP listener applications.</remarks>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.TcpConnectionInformation">
+            <summary>
+            Provides information about the Transmission Control Protocol (TCP) connections on the local computer.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpConnectionInformation.LocalEndPoint">
+            <summary>
+            Gets the local endpoint of a Transmission Control Protocol (TCP) connection.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpConnectionInformation.RemoteEndPoint">
+            <summary>
+            Gets the remote endpoint of a Transmission Control Protocol (TCP) connection.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpConnectionInformation.State">
+            <summary>
+            Gets the state of this Transmission Control Protocol (TCP) connection.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.TcpState">
+            <summary>
+            Specifies the states of a Transmission Control Protocol (TCP) connection.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.Unknown">
+            <summary>
+            The TCP connection state is unknown.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.Closed">
+            <summary>
+            The TCP connection is closed.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.Listen">
+            <summary>
+            The local endpoint of the TCP connection is listening for a connection request from any remote endpoint.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.SynSent">
+            <summary>
+            The local endpoint of the TCP connection has sent the remote endpoint a segment header with the synchronize (SYN) control bit set and is waiting for a matching connection request.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.SynReceived">
+            <summary>
+            The local endpoint of the TCP connection has sent and received a connection request and is waiting for an acknowledgment.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.Established">
+            <summary>
+            The TCP handshake is complete.
+            The connection has been established and data can be sent.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.FinWait1">
+            <summary>
+            The local endpoint of the TCP connection is waiting for a connection termination request from the remote endpoint or for an acknowledgement of the connection termination request sent previously.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.FinWait2">
+            <summary>
+            The local endpoint of the TCP connection is waiting for a connection termination request from the remote endpoint.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.CloseWait">
+            <summary>
+            The local endpoint of the TCP connection is waiting for a connection termination request from the local user.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.Closing">
+            <summary>
+            The local endpoint of the TCP connection is waiting for an acknowledgement of the connection termination request sent previously.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.LastAck">
+            <summary>
+            The local endpoint of the TCP connection is waiting for the final acknowledgement of the connection termination request sent previously.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.TimeWait">
+            <summary>
+            The local endpoint of the TCP connection is waiting for enough time to pass to ensure that the remote endpoint received the acknowledgement of its connection termination request.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.TcpState.DeleteTcb">
+            <summary>
+            The transmission control buffer (TCB) for the TCP connection is being deleted.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.PingOptions">
+            <summary>
+            Used to control how <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> data packets are transmitted.
+            </summary>
+            <remarks>The <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> class provides the <see cref="P:InTheHand.Net.NetworkInformation.PingOptions.Ttl"/> and <see cref="P:InTheHand.Net.NetworkInformation.PingOptions.DontFragment"/> properties to control how Internet Control Message Protocol (ICMP) echo request packets are transmitted.
+            <para>The <see cref="P:InTheHand.Net.NetworkInformation.PingOptions.Ttl"/> property specifies the Time to Live for packets sent by the <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> class.
+            This value indicates the number of routing nodes that can forward a Ping packet before it is discarded.
+            Setting this option is useful if you want to test the number of forwards, also known as hops, are required to send a packet from a source computer to a destination computer.</para>
+            <para>The <see cref="P:InTheHand.Net.NetworkInformation.PingOptions.DontFragment"/> property controls whether data sent to a remote host can be divided into multiple packets.
+            This option is useful if you want to test the maximum transmission unit (MTU) of the routers and gateways used to transmit the packet.</para>
+            <para>Instances of the <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> class are passed to the <see cref="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)"/> method, and the <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> class returns instances of <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> via the <see cref="P:InTheHand.Net.NetworkInformation.PingReply.Options"/> property.</para>
+            <para>For a list of initial property values for an instance of <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/>, see the PingOptions constructor.</para></remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PingOptions.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> class.
+            </summary>
+            <remarks>The following table shows initial property values for an instance of PingOptions.
+            <list><listheader><term>Property</term><description>Initial Value</description></listheader>
+            <item><term>Ttl</term><description>128</description></item>
+            <item><term>DontFragment</term><description>false</description></item></list>
+            You can set the properties to new values before calling <see cref="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)"/>.</remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PingOptions.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> class and sets the Time to Live and fragmentation values. 
+            </summary>
+            <param name="ttl">An Int32 value greater than zero that specifies the number of times that the <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> data packets can be forwarded.</param>
+            <param name="dontFragment">true to prevent data sent to the remote host from being fragmented; otherwise, false.</param>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingOptions.DontFragment">
+            <summary>
+            Gets or sets a <see cref="T:System.Boolean"/> value that controls fragmentation of the data sent to the remote host. 
+            </summary>
+            <remarks>Applications use this property to control whether data sent to a remote host by the Ping class can be divided into multiple packets.
+            This option is useful if you want to test the maximum transmission unit (MTU) of the routers and gateways used to transmit the packet.
+            If this property is true and the data sent to the remote host is larger then the MTU of a gateway or router between the sender and the remote host, the ping operation fails with status <see cref="F:InTheHand.Net.NetworkInformation.IPStatus.PacketTooBig"/>.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingOptions.Ttl">
+            <summary>
+            Gets or sets the number of routing nodes that can forward the <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> data before it is discarded. 
+            </summary>
+            <remarks>As gateways and routers transmit packets through a network, they decrement the current Time-to-Live (TTL) value found in the packet header.
+            If the TTL value reaches zero, the packet is deemed undeliverable and is discarded.
+            This option is useful if you want to test the number of routers and gateways used to transmit the data.</remarks>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.NetworkChange">
+            <summary>
+            Allows applications to receive notification when the Internet Protocol (IP) address of a network interface, also called a network card or adapter, changes.
+            </summary>
+            <remarks>
+            The <see cref="T:InTheHand.Net.NetworkInformation.NetworkChange"/> class provides address change notification by raising <see cref="E:InTheHand.Net.NetworkInformation.NetworkChange.NetworkAddressChanged"/> events.
+            An interface address can change for many reasons, such as a disconnected network cable, moving out of range of a wireless Local Area Network, or hardware failure.
+            <para>To receive notification, you must identify your application's event handlers, which are one or more methods that perform your application-specific tasks each time the event is raised.
+            To have a <see cref="T:InTheHand.Net.NetworkInformation.NetworkChange"/> object call your event-handling methods when a <see cref="E:InTheHand.Net.NetworkInformation.NetworkChange.NetworkAddressChanged"/> event occurs, you must associate the methods with a <see cref="T:InTheHand.Net.NetworkInformation.NetworkAddressChangedEventHandler"/> delegate, and add this delegate to the event.</para></remarks>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.NetworkChange.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:InTheHand.Net.NetworkInformation.NetworkChange.NetworkAddressChanged">
+            <summary>
+            Indicates that the network address has changed.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.NetworkAddressChangedEventHandler">
+            <summary>
+            References one or more methods to be called when the address of a network interface changes.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">An EventArgs object that contains data about the event.</param>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.Properties.Resources.net_bad_mac_address">
+            <summary>
+              Looks up a localized string similar to An invalid physical address was specified..
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.Properties.Resources.net_collection_readonly">
+            <summary>
+              Looks up a localized string similar to The collection is read-only..
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.Properties.Resources.net_invalid_ip_addr">
+            <summary>
+              Looks up a localized string similar to IPv4 address 0.0.0.0 and IPv6 address ::0 are unspecified addresses that cannot be used as a target address..
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.Properties.Resources.net_invalidPingBufferSize">
+            <summary>
+              Looks up a localized string similar to The buffer length must not exceed 65500 bytes..
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.MulticastIPAddressInformation">
+            <summary>
+            Provides information about a network interface's multicast address.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPAddressCollection">
+            <summary>
+            Stores a set of <see cref="T:System.Net.IPAddress"/> types.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressCollection.Add(System.Net.IPAddress)">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressCollection.Clear">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressCollection.Contains(System.Net.IPAddress)">
+            <summary>
+            Checks whether the collection contains the specified <see cref="T:System.Net.IPAddress"/> object.
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressCollection.CopyTo(System.Net.IPAddress[],System.Int32)">
+            <summary>
+            Copies the elements in this collection to a one-dimensional array of type <see cref="T:System.Net.IPAddress"/>.
+            </summary>
+            <param name="array">A one-dimensional array that receives a copy of the collection.</param>
+            <param name="offset">The zero-based index in array at which the copy begins.</param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressCollection.GetEnumerator">
+            <summary>
+            Returns an object that can be used to iterate through this collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressCollection.Remove(System.Net.IPAddress)">
+            <summary>
+            Throws a <see cref="T:System.NotSupportedException"/> because this operation is not supported for this collection.
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPAddressCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an object that can be used to iterate through this collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPAddressCollection.Count">
+            <summary>
+            Gets the number of <see cref="T:System.Net.IPAddress"/> types in this collection.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPAddressCollection.IsReadOnly">
+            <summary>
+            Gets a value that indicates whether access to this collection is read-only.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPAddressCollection.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:System.Net.IPAddress"/> instance at the specified index in the collection.
+            </summary>
+            <param name="index">The zero-based index of the element.</param>
+            <returns>The <see cref="T:System.Net.IPAddress"/> at the specified location.</returns>
+        </member>
+    </members>
+</doc>

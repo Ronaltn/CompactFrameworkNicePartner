@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InTheHand.Security.Cryptography</name>
+    </assembly>
+    <members>
+        <member name="T:InTheHand.Security.Cryptography.ProtectedData">
+            <summary>
+            Provides methods for protecting and unprotecting data.
+            </summary>
+            <remarks>This class provides access to the Data Protection API (DPAPI).
+            This is a service that is provided by the operating system and does not require additional libraries.
+            It provides protection using the user or machine credentials to encrypt or decrypt data.
+            <para>The class consists of two wrappers for the unmanaged DPAPI, <see cref="M:InTheHand.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])"/> and <see cref="M:InTheHand.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])"/>.
+            These two methods can be used to encrypt and decrypt data such as passwords, keys, and connection strings.</para>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile 2003 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.1 and later</description></item>
+            </list></remarks>
+        </member>
+        <member name="M:InTheHand.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+            <summary>
+            Encrypts the data in a specified byte array and returns a byte array that contains the encrypted data.
+            </summary>
+            <param name="userData">A byte array that contains data to encrypt.</param>
+            <param name="optionalEntropy">An optional additional byte array used to increase the complexity of the encryption, or Nothing for no additional complexity.</param>
+            <returns>A byte array representing the encrypted data.</returns>
+            <remarks>This method can be used to encrypt data such as passwords, keys, or connection strings.
+            The optionalEntropy parameter enables you to add data to increase the complexity of the encryption; specify Nothing for no additional complexity.
+            If provided, this information must also be used when decrypting the data using the <see cref="M:InTheHand.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])"/> method.</remarks>
+            <exception cref="T:System.ArgumentNullException">The userData parameter is Nothing.</exception>
+            <exception cref="T:System.Security.Cryptography.CryptographicException">The encryption failed.</exception>
+            <exception cref="T:System.OutOfMemoryException">The system ran out of memory while encrypting the data.</exception>
+        </member>
+        <member name="M:InTheHand.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+            <summary>
+            Decrypts the data in a specified byte array and returns a byte array that contains the decrypted data.
+            </summary>
+            <param name="encryptedData">A byte array containing data encrypted using the <see cref="M:InTheHand.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])"/> method.</param>
+            <param name="optionalEntropy">An optional additional byte array that was used to encrypt the data, or Nothing if the additional byte array was not used.</param>
+            <returns>A byte array representing the decrypted data.</returns>
+            <remarks>This method can be used to unprotect data that was encrypted using the <see cref="M:InTheHand.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])"/> method.
+            If the optionalEntropy parameter was used during encryption, it must be supplied to unencrypt the data.</remarks>
+            <exception cref="T:System.ArgumentNullException">The encryptedData parameter is Nothing.</exception>
+            <exception cref="T:System.Security.Cryptography.CryptographicException">The decryption failed.</exception>
+            <exception cref="T:System.OutOfMemoryException">The system ran out of memory while decrypting the data.</exception>
+        </member>
+        <member name="T:InTheHand.Security.Cryptography.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Security.Cryptography.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Security.Cryptography.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Security.Cryptography.Properties.Resources.Cryptography_InvalidCipherMode">
+            <summary>
+              Looks up a localized string similar to The specified cipher mode is not valid for this algorithm..
+            </summary>
+        </member>
+        <member name="T:InTheHand.Security.Cryptography.Aes">
+            <summary>
+            Represents the abstract base class from which all implementations of the Advanced Encryption Standard (AES) must inherit.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Security.Cryptography.Aes.Create">
+            <summary>
+            Creates a cryptographic object that is used to perform the symmetric algorithm.
+            </summary>
+            <returns>A cryptographic object that is used to perform the symmetric algorithm.</returns>
+        </member>
+        <member name="T:InTheHand.Security.Cryptography.AesManaged">
+            <summary>
+            Provides a managed implementation of the Advanced Encryption Standard (AES) symmetric algorithm.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Security.Cryptography.AesManaged.#ctor">
+            <summary>
+            Provides a managed implementation of the Advanced Encryption Standard (AES) symmetric algorithm.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Security.Cryptography.AesManaged.CreateDecryptor">
+            <summary>
+            Creates a symmetric decryptor object using the current key and initialization vector (IV).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Security.Cryptography.AesManaged.CreateDecryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric decryptor object using the specified key and initialization vector (IV).
+            </summary>
+            <param name="rgbKey"></param>
+            <param name="rgbIV"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Security.Cryptography.AesManaged.CreateEncryptor">
+            <summary>
+            Creates a symmetric encryptor object using the current key and initialization vector (IV).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Security.Cryptography.AesManaged.CreateEncryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric encryptor object using the specified key and initialization vector (IV).
+            </summary>
+            <param name="rgbKey"></param>
+            <param name="rgbIV"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Security.Cryptography.AesManaged.GenerateIV">
+            <summary>
+            Generates a random initialization vector (IV) to use for the symmetric algorithm.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Security.Cryptography.AesManaged.GenerateKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:InTheHand.Security.Cryptography.AesManaged.FeedbackSize">
+            <summary>
+            Gets or sets the number of bits to use as feedback. 
+            </summary>
+            <value>The feedback size, in bits.</value>
+            <remarks>The maximum feedback size is 128 bits.
+            <para>Because this algorithm does not support feedback modes, using this property is discouraged.</para></remarks>
+        </member>
+        <member name="P:InTheHand.Security.Cryptography.AesManaged.IV">
+            <summary>
+            Gets or sets the initialization vector (IV) to use for the symmetric algorithm.
+            </summary>
+            <value>The initialization vector to use for the symmetric algorithm</value>
+        </member>
+        <member name="P:InTheHand.Security.Cryptography.AesManaged.Key">
+            <summary>
+            Gets or sets the secret key used for the symmetric algorithm.
+            </summary>
+            <value>The key for the symmetric algorithm.</value>
+        </member>
+        <member name="P:InTheHand.Security.Cryptography.AesManaged.KeySize">
+            <summary>
+            Gets or sets the size, in bits, of the secret key used for the symmetric algorithm. 
+            </summary>
+            <value>The size, in bits, of the key used by the symmetric algorithm.</value>
+            <remarks>The maximum size of the key is 256 bits.</remarks>
+        </member>
+        <member name="P:InTheHand.Security.Cryptography.AesManaged.LegalBlockSizes">
+            <summary>
+            Gets the block sizes, in bits, that are supported by the symmetric algorithm.
+            </summary>
+            <value>An array that contains the block sizes supported by the algorithm.</value>
+            <remarks>The symmetric algorithm supports only block sizes that match an entry in this array.</remarks>
+        </member>
+        <member name="P:InTheHand.Security.Cryptography.AesManaged.Mode">
+            <summary>
+            Gets or sets the mode for operation of the symmetric algorithm.
+            </summary>
+            <value>One of the CipherMode values. 
+            The default is CBC.</value>
+            <remarks>The CFB and OFB modes are not supported.</remarks>
+            <exception cref="T:System.Security.Cryptography.CryptographicException">Mode is set to CFB or OFB.</exception>
+        </member>
+        <member name="P:InTheHand.Security.Cryptography.AesManaged.Padding">
+            <summary>
+            Gets or sets the padding mode used in the symmetric algorithm.
+            </summary>
+            <value>One of the PaddingMode values. 
+            The default is PKCS7.</value>
+        </member>
+    </members>
+</doc>

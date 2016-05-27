@@ -1,0 +1,573 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InTheHand.Phone</name>
+    </assembly>
+    <members>
+        <member name="T:InTheHand.Phone.Tasks.ChooserBase`1">
+            <summary>
+            The base class from which all choosers are derived.
+            This class exposes a common function for showing the choosers and an event for handling the chooser result.
+            </summary>
+            <typeparam name="TTaskEventArgs">The generic parameter for the EventArgs object for each type of chooser.</typeparam>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.ChooserBase`1.Show">
+            <summary>
+            Launches and displays the chooser.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.ChooserBase`1.FireCompleted(System.Object,`0,System.Delegate)">
+            <summary>
+            Raises the <see cref="E:InTheHand.Phone.Tasks.ChooserBase`1.Completed"/> event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> associated with the event.</param>
+            <param name="fireThisHandlerOnly">The delegate to be called when the event is raised.</param>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.ChooserBase`1.TaskEventArgs">
+            <summary>
+            The EventArgs for the <see cref="E:InTheHand.Phone.Tasks.ChooserBase`1.Completed"/> event.
+            </summary>
+        </member>
+        <member name="E:InTheHand.Phone.Tasks.ChooserBase`1.Completed">
+            <summary>
+            Occurs when a chooser task is completed.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Info.DeviceStatus">
+            <summary>
+            Allows an application to obtain information about the device on which it is running.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Info.DeviceStatus.DeviceManufacturer">
+            <summary>
+            Returns the manufacturer of the device, such as Samsung or LGE.
+            </summary>
+            <remarks>Because this property requires the DeviceIdentity capability it is not available on Windows Phone 7 - use GetValue instead.</remarks>
+        </member>
+        <member name="P:InTheHand.Phone.Info.DeviceStatus.DeviceName">
+            <summary>
+            Returns the name of the device and possibly the manufacturer, such as Samsung Taylor or Pacific.
+            </summary>
+            <remarks>Because this property requires the DeviceIdentity capability it is not available on Windows Phone 7 - use GetValue instead.</remarks>
+        </member>
+        <member name="P:InTheHand.Phone.Info.DeviceStatus.DeviceUniqueId">
+            <summary>
+            Returns a unique hash for the device, constant across all applications and across flashing / upgrading the OS.
+            </summary>
+            <remarks>Because this property requires the DeviceIdentity capability it is not available on Windows Phone 7 - use GetValue instead.</remarks>
+        </member>
+        <member name="P:InTheHand.Phone.Info.DeviceStatus.DeviceTotalMemory">
+            <summary>
+            Returns the device physical RAM size in bytes.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Info.DeviceStatus.ApplicationCurrentMemoryUsage">
+            <summary>
+            Returns the current application’s memory usage in bytes.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Info.DeviceStatus.ApplicationPeakMemoryUsage">
+            <summary>
+            Returns the current application peak memory usage in bytes.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Info.DeviceStatus.IsKeyboardPresent">
+            <summary>
+            Indicates whether the device contains a physical hardware keyboard.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Devices.Environment">
+            <summary>
+            Gives applications access to information about the environment in which they are running.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Environment.DeviceType">
+            <summary>
+            Gets the type of device on which the application is running.
+            Use this property to determine if your application is running on an actual device or on the device emulator.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.EmailAddressChooserTask">
+            <summary>
+            Allows an application to launch the Contacts application.
+            Use this to obtain the email address of a contact selected by the user.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows Embedded Compact 7</description></item>
+            </list>
+            </remarks>  
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.EmailAddressChooserTask.Show">
+            <summary>
+            Shows the email address chooser application.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Devices.DeviceType">
+            <summary>
+            Defines the device type values used by the <see cref="P:InTheHand.Devices.Environment.DeviceType"/> property.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Devices.DeviceType.Emulator">
+            <summary>
+            The device type is a device emulator.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Devices.DeviceType.Device">
+            <summary>
+            The device type is an actual device.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.PhoneNumberChooserTask">
+            <summary>
+            Allows an application to launch the Contacts application.
+            Use this to obtain the phone number of a contact selected by the user.
+            </summary>
+            <remarks>Launch the Contacts application by calling the <see cref="M:InTheHand.Phone.Tasks.PhoneNumberChooserTask.Show"/> method of the <see cref="T:InTheHand.Phone.Tasks.PhoneNumberChooserTask"/> object.
+            Obtain the result of the chooser operation by handling the <see cref="E:InTheHand.Phone.Tasks.ChooserBase`1.Completed"/> event.</remarks>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows Embedded Compact 7</description></item>
+            </list>
+            </remarks>  
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.PhoneNumberChooserTask.Show">
+            <summary>
+            Shows the Contacts application.
+            </summary>
+            <remarks>Obtain the result of the chooser operation by handling the <see cref="E:InTheHand.Phone.Tasks.ChooserBase`1.Completed"/> event.</remarks>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.EmailComposeTask">
+            <summary>
+            Allows an application to launch the email application with a new message displayed.
+            Use this to allow users to send email from your application.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003 and later, Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded</term><description>Windows CE 4.1 and later</description></item>
+            </list>
+            </remarks>  
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.EmailComposeTask.Show">
+            <summary>
+            Shows the email application with a new message displayed.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.EmailComposeTask.Body">
+            <summary>
+            The body of the new email message.
+            </summary>
+            <remarks>The Body property does not support HTML formatting.
+            If the content assigned to the Body property happens to work with the codepage that maps to the current locale settings for the device, it will be sent using that codepage. 
+            If the codepage mapped to the current locale setting cannot render the content, UTF-8 encoding will be used.  </remarks>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.EmailComposeTask.To">
+            <summary>
+            The recipients on the To line of the new email message.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.EmailComposeTask.Cc">
+            <summary>
+            The recipients on the cc line of the new email message.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.EmailComposeTask.Bcc">
+            <summary>
+            Gets or sets the recipients on the Bcc line of the new email message.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.EmailComposeTask.Subject">
+            <summary>
+            The subject of the new email message.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Info.PowerSource">
+            <summary>
+            Indicates if the device is currently running on battery power or is plugged in to an external power supply.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Phone.Info.PowerSource.Battery">
+            <summary>
+            The device is running on battery power.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Phone.Info.PowerSource.External">
+            <summary>
+            The device is plugged in to an external power source, such as being docked to a computer or connected to a power supply.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.SmsComposeTask">
+            <summary>
+            Launches the Messaging application with a new SMS message displayed.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003 Phone Edition and later, Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded</term><description>Windows Embedded CE 6 and later</description></item>
+            </list>
+            </remarks>  
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.SmsComposeTask.Show">
+            <summary>
+            Shows the Messaging application.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.SmsComposeTask.Body">
+            <summary>
+            Gets or sets the body text of the new SMS message.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.SmsComposeTask.To">
+            <summary>
+            Gets or sets the recipient list for the new SMS message.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.MediaPlayerLauncher">
+            <summary>
+            Allows an application to launch the media player.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            </list>
+            </remarks>  
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.MediaPlayerLauncher.Show">
+            <summary>
+            Shows the media player application.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.MediaPlayerLauncher.Media">
+            <summary>
+            Gets or sets the media played with the media player application.
+            </summary>
+            <value>The URI of a media file.</value>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.EmailResult">
+            <summary>
+            Represents an email address returned from a call to the <see cref="M:InTheHand.Phone.Tasks.EmailAddressChooserTask.Show"/> method of a <see cref="T:InTheHand.Phone.Tasks.EmailAddressChooserTask"/> object.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.TaskEventArgs">
+            <summary>
+            The EventArgs used by the Completed event for all Choosers.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.TaskEventArgs.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Phone.Tasks.TaskEventArgs"/> class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.TaskEventArgs.#ctor(InTheHand.Phone.Tasks.TaskResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Phone.Tasks.TaskEventArgs"/> class with the specified <see cref="P:InTheHand.Phone.Tasks.TaskEventArgs.TaskResult"/>.
+            </summary>
+            <param name="taskResult">The <see cref="P:InTheHand.Phone.Tasks.TaskEventArgs.TaskResult"/> associated with the new <see cref="T:InTheHand.Phone.Tasks.TaskEventArgs"/>.</param>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.TaskEventArgs.Error">
+            <summary>
+            The exception associated with the <see cref="T:InTheHand.Phone.Tasks.TaskEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.TaskEventArgs.TaskResult">
+            <summary>
+            The <see cref="P:InTheHand.Phone.Tasks.TaskEventArgs.TaskResult"/> associated with the <see cref="T:InTheHand.Phone.Tasks.TaskEventArgs"/>.
+            This indicates whether the task was completed successfully, if the user cancelled the task, or if no result information is available.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.EmailResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Phone.Tasks.EmailResult"/> class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.EmailResult.#ctor(InTheHand.Phone.Tasks.TaskResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Phone.Tasks.EmailResult"/> class with the specified <see cref="T:InTheHand.Phone.Tasks.TaskResult"/>.
+            </summary>
+            <param name="taskResult"></param>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.EmailResult.Email">
+            <summary>
+            Gets the email address contained in the result.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.AddressChooser_SelectAddress">
+            <summary>
+              Looks up a localized string similar to Select the address that you want to use:.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.AddressChooser_SelectContact">
+            <summary>
+              Looks up a localized string similar to Select a Contact.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.Cancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.Phone">
+            <summary>
+              Looks up a localized string similar to Phone.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.PhoneCallTask_Show">
+            <summary>
+              Looks up a localized string similar to Dial {0}.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.PhoneCallTask_ShowName">
+            <summary>
+              Looks up a localized string similar to Dial {0} at {1}.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.Select">
+            <summary>
+              Looks up a localized string similar to Select.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.vibratecontroller_DurationMax">
+            <summary>
+              Looks up a localized string similar to Duration is greater than the maximum allowed duration..
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Properties.Resources.vibratecontroller_DurationMin">
+            <summary>
+              Looks up a localized string similar to Duration cannot be negative..
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.TaskResult">
+            <summary>
+            Describes the success status of a chooser operation.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Phone.Tasks.TaskResult.None">
+            <summary>
+            No success status was returned from the chooser operation.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Phone.Tasks.TaskResult.OK">
+            <summary>
+            The chooser operation was successful.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Phone.Tasks.TaskResult.Cancel">
+            <summary>
+            The chooser operation was cancelled by the user.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.PhotoResult">
+            <summary>
+            Represents a photo returned from a call to the Show method of a <see cref="T:InTheHand.Phone.Tasks.PhotoChooserTask"/> object or a <see cref="T:InTheHand.Phone.Tasks.CameraCaptureTask"/> object.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.PhotoResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Phone.Tasks.PhotoResult"/> class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.PhotoResult.#ctor(InTheHand.Phone.Tasks.TaskResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Phone.Tasks.PhotoResult"/> class with the specified <see cref="T:InTheHand.Phone.Tasks.TaskResult"/>.
+            </summary>
+            <param name="taskResult"></param>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.PhotoResult.ChosenPhoto">
+            <summary>
+            Gets the <see cref="T:System.IO.Stream"/> containing the data for the photo.
+            </summary>
+            <value>The data for the photo.</value>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.PhotoResult.OriginalFileName">
+            <summary>
+            Gets the file name of the photo.
+            </summary>
+            <value>The file name of the photo.</value>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.PhotoChooserTask">
+            <summary>
+            Allows an application to launch the Photo Chooser application.
+            Use this to allow users to select a photo.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows Embedded Compact 7</description></item>
+            </list>
+            </remarks>  
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.PhotoChooserTask.Show">
+            <summary>
+            Shows the Photo Chooser application.
+            </summary>
+            <remarks>Obtain the result of the chooser operation by handling the <see cref="E:InTheHand.Phone.Tasks.ChooserBase`1.Completed"/> event.</remarks>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.PhotoChooserTask.PixelHeight">
+            <summary>
+            Gets or sets the maximum height and the height component of the aspect ratio for a cropping region set by the user during the photo choosing process.
+            </summary>
+            <remarks>This property is provided for code compatibility with Windows Phone 7 and is not implemented.</remarks>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.PhotoChooserTask.PixelWidth">
+            <summary>
+            Gets or sets the maximum height and the height component of the aspect ratio for a cropping region set by the user during the photo choosing process.
+            </summary>
+            <remarks>This property is provided for code compatibility with Windows Phone 7 and is not implemented.</remarks>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.PhotoChooserTask.ShowCamera">
+            <summary>
+            Gets or sets whether the user is presented with a button for launching the camera during the photo choosing process.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.PhoneNumberResult">
+            <summary>
+            Represents a phone number returned from a call to the <see cref="M:InTheHand.Phone.Tasks.PhoneNumberChooserTask.Show"/> method of a <see cref="T:InTheHand.Phone.Tasks.PhoneNumberChooserTask"/> object.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.PhoneNumberResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Phone.Tasks.PhoneNumberResult"/> class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.PhoneNumberResult.#ctor(InTheHand.Phone.Tasks.TaskResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Phone.Tasks.PhoneNumberResult"/> class with the specified <see cref="T:InTheHand.Phone.Tasks.TaskResult"/>.
+            </summary>
+            <param name="taskResult">The TaskResult associated with the new <see cref="T:InTheHand.Phone.Tasks.PhoneNumberResult"/>.</param>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.PhoneNumberResult.PhoneNumber">
+            <summary>
+            The phone number contained in the result.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.PhoneCallTask">
+            <summary>
+            Allows an application to launch the Phone application.
+            Use this to allow users to make a phone call from your application.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003 Phone Edition and later, Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded</term><description>Windows Embedded CE 6.0 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.PhoneCallTask.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Phone.Tasks.PhoneCallTask"/> class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.PhoneCallTask.Show">
+            <summary>
+            Shows the Phone application.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.PhoneCallTask.PromptUser">
+            <summary>
+            Gets/Sets a value which indicates whether to ask the user to confirm the action.
+            The default value is True.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.PhoneCallTask.PhoneNumber">
+            <summary>
+            Gets or sets the phone number that is dialed when the Phone application is launched.
+            </summary>
+            <value>The phone number that is dialed when the Phone application is launched.</value>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.PhoneCallTask.DisplayName">
+            <summary>
+            Gets or sets the name that is displayed when the Phone application is launched.
+            </summary>
+            <value>The name that is displayed when the Phone application is launched.</value>
+        </member>
+        <member name="T:InTheHand.Devices.VibrateController">
+            <summary>
+            Allows applications to start and stop vibration on the device.
+            Obtain an instance of this class using the <see cref="P:InTheHand.Devices.VibrateController.Default"/> property.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Requirements</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile 2003 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Devices.VibrateController.Start(System.TimeSpan)">
+            <summary>
+            Starts vibration on the device.
+            </summary>
+            <param name="duration">A <see cref="T:System.TimeSpan"/> object specifying the amount of time for which the phone vibrates.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Duration is greater than the maximum allowed duration or duration is negative.</exception>
+        </member>
+        <member name="M:InTheHand.Devices.VibrateController.Stop">
+            <summary>
+            Stops vibration on the device.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.VibrateController.Default">
+            <summary>
+            The static method used to obtain an instance of the <see cref="T:InTheHand.Devices.VibrateController"/> object.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.WebBrowserTask">
+            <summary>
+            Allows an application to launch the web browser application.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Pocket PC 2003 and later, Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded</term><description>Windows CE 4.1 and later (Internet Explorer component required)</description></item>
+            </list>
+            </remarks>  
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.WebBrowserTask.Show">
+            <summary>
+            Shows the web browser application.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Phone.Tasks.WebBrowserTask.Uri">
+            <summary>
+            Gets or sets the URI to which the web browser application will navigate when it is launched.  
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Tasks.CameraCaptureTask">
+            <summary>
+            Allows an application to launch the Camera application.
+            Use this to allow users to take a photo from your application.
+            </summary>
+            <remarks>Launch the Photo Chooser application by calling the <see cref="M:InTheHand.Phone.Tasks.PhotoChooserTask.Show"/> method of the <see cref="T:InTheHand.Phone.Tasks.PhotoChooserTask"/> object.
+            Obtain the result of the chooser operation by handling the <see cref="E:InTheHand.Phone.Tasks.ChooserBase`1.Completed"/> event.</remarks>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded</term><description>Windows Embedded CE 6.0</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Phone.Tasks.CameraCaptureTask.Show">
+            <summary>
+            Shows the camera application.
+            </summary>
+            <remarks>Obtain the result of the chooser operation by handling the <see cref="E:InTheHand.Phone.Tasks.ChooserBase`1.Completed"/> event.</remarks>
+        </member>
+    </members>
+</doc>

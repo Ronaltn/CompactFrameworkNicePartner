@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InTheHand.WindowsMobile.Net</name>
+    </assembly>
+    <members>
+        <member name="T:InTheHand.WindowsMobile.Net.WirelessManager">
+            <summary>
+            Provides access to the wireless devices to control their states.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Net.WirelessManager.#ctor">
+            <summary>
+            Initializes a new instance of WirelessManager.
+            </summary>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Net.WirelessManager.Refresh">
+            <summary>
+            Refreshes the wireless device information.
+            </summary>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Net.WirelessManager.AllOn">
+            <summary>
+            Turns all attached wireless devices on.
+            </summary>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Net.WirelessManager.AllOff">
+            <summary>
+            Turns all attached wireless devices off.
+            </summary>
+        </member>
+        <member name="P:InTheHand.WindowsMobile.Net.WirelessManager.Item(System.Int32)">
+            <summary>
+            Returns the WirelessDevice at the specified index.
+            </summary>
+            <param name="index">zero-based index of a wireless device.</param>
+            <returns>A WirelessDevice instance for the individual radio device.</returns>
+        </member>
+        <member name="P:InTheHand.WindowsMobile.Net.WirelessManager.Bluetooth">
+            <summary>
+            Returns the WirelessDevice for Bluetooth (if present).
+            </summary>
+        </member>
+        <member name="P:InTheHand.WindowsMobile.Net.WirelessManager.Phone">
+            <summary>
+            Returns the WirelessDevice for the Phone (if present).
+            </summary>
+        </member>
+        <member name="P:InTheHand.WindowsMobile.Net.WirelessManager.WiFi">
+            <summary>
+            Returns the WirelessDevice for WiFi (if present).
+            </summary>
+        </member>
+        <member name="T:InTheHand.WindowsMobile.Net.WirelessDeviceType">
+            <summary>
+            Specifies wireless device types.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Net.WirelessDeviceType.WiFi">
+            <summary>
+            Device is a Wireless LAN adapter.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Net.WirelessDeviceType.Phone">
+            <summary>
+            Device is a phone (GSM or CDMA) device.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Net.WirelessDeviceType.Bluetooth">
+            <summary>
+            Device is a Bluetooth adapter.
+            </summary>
+        </member>
+        <member name="T:InTheHand.WindowsMobile.Net.WirelessState">
+            <summary>
+            Specifies possible states for a wireless device.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Net.WirelessState.Off">
+            <summary>
+            Wireless device is off.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Net.WirelessState.On">
+            <summary>
+            Wireless device is on.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Net.WirelessState.Discoverable">
+            <summary>
+            Only supported for Bluetooth.
+            </summary>
+        </member>
+        <member name="T:InTheHand.WindowsMobile.Net.WirelessDevice">
+            <summary>
+            Represents an individual radio device.
+            </summary>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Net.WirelessDevice.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Net.WirelessDevice.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:InTheHand.WindowsMobile.Net.WirelessDevice.DeviceName">
+            <summary>
+            Returns the name of the wireless device.
+            </summary>
+        </member>
+        <member name="P:InTheHand.WindowsMobile.Net.WirelessDevice.DisplayName">
+            <summary>
+            Returns the friendly display name of the device (if available).
+            </summary>
+        </member>
+        <member name="P:InTheHand.WindowsMobile.Net.WirelessDevice.DeviceType">
+            <summary>
+            Returns the type of the wireless device.
+            </summary>
+        </member>
+        <member name="P:InTheHand.WindowsMobile.Net.WirelessDevice.RadioState">
+            <summary>
+            Gets or sets the current radio state.
+            </summary>
+        </member>
+        <member name="T:InTheHand.WindowsMobile.Net.SharingConnection">
+            <summary>
+            Specifies the local connection over which to share the cellular connection.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 AKU 3 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Net.SharingConnection.Usb">
+            <summary>
+            Shares the cellular connection over the USB interface.
+            </summary>
+        </member>
+        <member name="F:InTheHand.WindowsMobile.Net.SharingConnection.Bluetooth">
+            <summary>
+            Shares the cellular connection over Bluetooth using the PAN profile.
+            </summary>
+        </member>
+        <member name="T:InTheHand.WindowsMobile.Net.InternetSharing">
+            <summary>
+            Enables you to programmatically enable and disable Internet Sharing via USB or Bluetooth.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 AKU 3 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Net.InternetSharing.Enable(InTheHand.WindowsMobile.Net.SharingConnection,System.String)">
+            <summary>
+            Enables Internet Sharing.
+            </summary>
+            <param name="sharingConnection">Type of connection to share over.</param>
+            <param name="cellularConnection">Name of the cellular (e.g. GPRS) connection to share.</param>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 AKU 3 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.WindowsMobile.Net.InternetSharing.Disable">
+            <summary>
+            Disables Internet Sharing.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 AKU 3 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+    </members>
+</doc>

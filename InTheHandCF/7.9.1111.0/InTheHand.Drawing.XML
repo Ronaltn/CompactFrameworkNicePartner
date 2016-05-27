@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InTheHand.Drawing</name>
+    </assembly>
+    <members>
+        <member name="T:InTheHand.Drawing.SystemIcons">
+            <summary>
+            Each property of the SystemIcons class is an <see cref="T:System.Drawing.Icon"/> object for Windows system-wide icons.
+            </summary>
+            <remarks>Equivalent to System.Drawing.SystemIcons</remarks>
+        </member>
+        <member name="P:InTheHand.Drawing.SystemIcons.Application">
+            <summary>
+            Gets an <see cref="T:System.Drawing.Icon"/> object that contains the default application icon (WIN32: IDI_APPLICATION).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Drawing.SystemIcons.Hand">
+            <summary>
+            Gets an <see cref="T:System.Drawing.Icon"/> object that contains the system hand icon (WIN32: IDI_HAND).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Drawing.SystemIcons.Error">
+            <summary>
+            Gets an <see cref="T:System.Drawing.Icon"/> object that contains the system error icon (WIN32: IDI_ERROR).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Drawing.SystemIcons.Question">
+            <summary>
+            Gets an <see cref="T:System.Drawing.Icon"/> object that contains the system question icon (WIN32: IDI_QUESTION).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Drawing.SystemIcons.Exclamation">
+            <summary>
+            Gets an <see cref="T:System.Drawing.Icon"/> object that contains the system exclamation icon (WIN32: IDI_EXCLAMATION).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Drawing.SystemIcons.Warning">
+            <summary>
+            Gets an <see cref="T:System.Drawing.Icon"/> object that contains the system warning icon (WIN32: IDI_WARNING).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Drawing.SystemIcons.Asterisk">
+            <summary>
+            Gets an <see cref="T:System.Drawing.Icon"/> object that contains the system asterisk icon (WIN32: IDI_ASTERISK).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Drawing.SystemIcons.Information">
+            <summary>
+            Gets an <see cref="T:System.Drawing.Icon"/> object that contains the system information icon (WIN32: IDI_INFORMATION).
+            </summary>
+        </member>
+        <member name="T:InTheHand.Drawing.ColorTranslator">
+            <summary>
+            Translates colors to and from GDI+ Color structures.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Drawing.ColorTranslator.FromWin32(System.Int32)">
+            <summary>
+            Translates a Windows color value to a GDI+ <see cref="T:System.Drawing.Color"/> structure.
+            </summary>
+            <param name="win32Color">The Windows color to translate.</param>
+            <returns>The <see cref="T:System.Drawing.Color"/> structure that represents the translated Windows color.</returns>
+        </member>
+        <member name="M:InTheHand.Drawing.ColorTranslator.ToWin32(System.Drawing.Color)">
+            <summary>
+            Translates the specified <see cref="T:System.Drawing.Color"/> structure to a Windows color.
+            </summary>
+            <param name="c">The <see cref="T:System.Drawing.Color"/> structure to translate.</param>
+            <returns>The Windows color value.</returns>
+        </member>
+        <member name="T:InTheHand.Drawing.Drawing2D.LinearGradientBrush">
+            <summary>
+            Encapsulates a <see cref="T:System.Drawing.Brush"/> with a linear gradient.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.2 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Drawing.Drawing2D.LinearGradientBrush.#ctor(System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color,InTheHand.Drawing.Drawing2D.LinearGradientMode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Drawing.Drawing2D.LinearGradientBrush"/> class with the specified points and colors.
+            </summary>
+            <param name="rect">A Rectangle structure that specifies the bounds of the linear gradient.</param>
+            <param name="color1">A <see cref="T:System.Drawing.Color"/> structure that represents the starting color for the gradient.</param>
+            <param name="color2">A <see cref="T:System.Drawing.Color"/> structure that represents the ending color for the gradient.</param>
+            <param name="linearGradientMode">A <see cref="T:InTheHand.Drawing.Drawing2D.LinearGradientMode"/> enumeration element that specifies the orientation of the gradient.
+            The orientation determines the starting and ending points of the gradient.</param>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.2 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Drawing.Drawing2D.LinearGradientBrush.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,InTheHand.Drawing.Drawing2D.LinearGradientMode)">
+            <summary>
+            Initializes a new instance of the LinearGradientBrush class with the specified points and colors.
+            </summary>
+            <param name="rect">A RectangleF structure that specifies the bounds of the linear gradient.</param>
+            <param name="color1">A Color structure that represents the starting color for the gradient.</param>
+            <param name="color2">A Color structure that represents the ending color for the gradient.</param>
+            <param name="linearGradientMode">A <see cref="T:InTheHand.Drawing.Drawing2D.LinearGradientMode"/> enumeration element that specifies the orientation of the gradient.
+            The orientation determines the starting and ending points of the gradient.</param>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.2 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Drawing.Drawing2D.LinearGradientBrush.Dispose">
+            <summary>
+            Releases all resources used by this <see cref="T:InTheHand.Drawing.Drawing2D.LinearGradientBrush"/> object.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Drawing.Drawing2D.LinearGradientBrush.Finalize">
+            <summary>
+            Allows a <see cref="T:InTheHand.Drawing.Drawing2D.LinearGradientBrush"/> to attempt to free resources and perform other cleanup operations before the <see cref="T:InTheHand.Drawing.Drawing2D.LinearGradientBrush"/> is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Drawing.Drawing2D.LinearGradientBrush.Rectangle">
+            <summary>
+            A <see cref="T:System.Drawing.RectangleF"/> structure that specifies the starting and ending points of the gradient.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.2 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Drawing.NativeMethods.ToColorRef(System.Drawing.Color)">
+            <summary>
+            Converts a managed <see cref="T:System.Drawing.Color"/> object to a COLORREF used by native drawing routines.
+            </summary>
+            <param name="c">Managed <see cref="T:System.Drawing.Color"/> instance.</param>
+            <returns></returns>
+        </member>
+        <member name="T:InTheHand.Drawing.Drawing2D.LinearGradientMode">
+            <summary>
+            Specifies the direction of a linear gradient.
+            </summary>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.2 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:InTheHand.Drawing.Drawing2D.LinearGradientMode.Horizontal">
+            <summary>
+            Specifies a gradient from left to right.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.Drawing2D.LinearGradientMode.Vertical">
+            <summary>
+            Specifies a gradient from top to bottom.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Drawing.CopyPixelOperation">
+            <summary>
+            Determines how the source color in a copy pixel operation is combined with the destination color to result in a final color.
+            </summary>
+            <remarks>The <b>CopyPixelOperation</b> enumeration is used by the <see cref="M:InTheHand.Drawing.GraphicsInTheHand.CopyFromScreen(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Point,System.Drawing.Size)"/> method.</remarks>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.Blackness">
+            <summary>
+            The destination area is filled by using the color associated with index 0 in the physical palette.
+            (This color is black for the default physical palette.)
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.CaptureBlt">
+            <summary>
+            Windows that are layered on top of your window are included in the resulting image.
+            By default, the image contains only your window.
+            Note that this generally cannot be used for printing device contexts.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.DestinationInvert">
+            <summary>
+            The destination area is inverted.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.MergeCopy">
+            <summary>
+            The colors of the source area are merged with the colors of the selected brush of the destination device context using the Boolean AND operator.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.MergePaint">
+            <summary>
+            The colors of the inverted source area are merged with the colors of the destination area by using the Boolean OR operator.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.NoMirrorBitmap">
+            <summary>
+            The bitmap is not mirrored.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.NotSourceCopy">
+            <summary>
+            The inverted source area is copied to the destination.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.NotSourceErase">
+            <summary>
+            The source and destination colors are combined using the Boolean OR operator, and then resultant color is then inverted.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.PatCopy">
+            <summary>
+            The brush currently selected in the destination device context is copied to the destination bitmap.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.PatInvert">
+            <summary>
+            The colors of the brush currently selected in the destination device context are combined with the colors of the destination are using the Boolean XOR operator.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.PatPaint">
+            <summary>
+            The colors of the brush currently selected in the destination device context are combined with the colors of the inverted source area using the Boolean OR operator.
+            The result of this operation is combined with the colors of the destination area using the Boolean OR operator.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.SourceAnd">
+            <summary>
+            The colors of the source and destination areas are combined using the Boolean AND operator.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.SourceCopy">
+            <summary>
+            The source area is copied directly to the destination area.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.SourceErase">
+            <summary>
+            The inverted colors of the destination area are combined with the colors of the source area using the Boolean AND operator.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.SourceInvert">
+            <summary>
+            The colors of the source and destination areas are combined using the Boolean XOR operator.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.SourcePaint">
+            <summary>
+            The colors of the source and destination areas are combined using the Boolean OR operator.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Drawing.CopyPixelOperation.Whiteness">
+            <summary>
+            The destination area is filled by using the color associated with index 1 in the physical palette.
+            (This color is white for the default physical palette.)
+            </summary>
+        </member>
+        <member name="T:InTheHand.Drawing.IconInTheHand">
+            <summary>
+            Provides supporting methods for <see cref="T:System.Drawing.Icon"/>.
+            </summary>
+            <seealso cref="T:System.Drawing.Icon"/>
+        </member>
+        <member name="M:InTheHand.Drawing.IconInTheHand.ExtractAssociatedIcon(System.String)">
+            <summary>
+            Returns an icon representation of an image contained in the specified file.
+            </summary>
+            <param name="filename">The path to the file that contains an image.</param>
+            <returns>The Icon representation of the image contained in the specified file.</returns>
+        </member>
+        <member name="M:InTheHand.Drawing.IconInTheHand.ExtractAssociatedIcon(System.String,System.Boolean)">
+            <summary>
+            Returns an icon representation of an image contained in the specified file.
+            </summary>
+            <param name="filename">The path to the file that contains an image.</param>
+            <param name="largeIcon">Specifies whether to retrieve the large (Default) or small size icon.</param>
+            <returns>The Icon representation of the image contained in the specified file.</returns>
+        </member>
+        <member name="T:InTheHand.Drawing.SystemFonts">
+            <summary>
+            Specifies the fonts used to display text in Windows display elements.
+            </summary>
+            <remarks>Equivalent to System.Drawing.SystemFonts</remarks>
+        </member>
+        <member name="P:InTheHand.Drawing.SystemFonts.DefaultFont">
+            <summary>
+            Gets the default font that applications can use for dialog boxes and forms.
+            </summary>
+            <value>The default <see cref="T:System.Drawing.Font"/> of the system.
+            The value returned will vary depending on UI metrics and culture of the operating system.</value>
+        </member>
+        <member name="P:InTheHand.Drawing.SystemFonts.CaptionFont">
+            <summary>
+            Gets a <see cref="T:System.Drawing.Font"/> that is used to display text in the title bars of windows.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Font"/> that is used to display text in the title bars of windows.</value>
+        </member>
+        <member name="T:InTheHand.Drawing.ColorInTheHand">
+            <summary>
+            Provides helper methods for the <see cref="T:System.Drawing.Color"/> class.
+            </summary>
+            <seealso cref="T:System.Drawing.Color"/>
+        </member>
+        <member name="M:InTheHand.Drawing.ColorInTheHand.ToHtml(System.Drawing.Color)">
+            <summary>
+            Translates the specified Color structure to an HTML string color representation.
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Drawing.ColorInTheHand.GetHue(System.Drawing.Color)">
+            <summary>
+            Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this Color structure.
+            </summary>
+            <param name="color">The hue, in degrees, of this Color. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSB color space.</param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Drawing.ColorInTheHand.GetSaturation(System.Drawing.Color)">
+            <summary>
+            Gets the hue-saturation-brightness (HSB) saturation value for this Color structure.
+            </summary>
+            <param name="color"></param>
+            <returns>The saturation of this Color. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.</returns>
+        </member>
+        <member name="M:InTheHand.Drawing.ColorInTheHand.GetBrightness(System.Drawing.Color)">
+            <summary>
+            Gets the hue-saturation-brightness (HSB) brightness value for this Color structure.
+            </summary>
+            <param name="color"></param>
+            <returns>The brightness of this Color. The brightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.</returns>
+        </member>
+        <member name="M:InTheHand.Drawing.ColorInTheHand.FromHSB(System.Single,System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="h"></param>
+            <param name="s"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InTheHand.Drawing.GraphicsInTheHand">
+            <summary>
+            Provides supporting methods for <see cref="T:System.Drawing.Graphics"/>.
+            </summary>
+            <seealso cref="T:System.Drawing.Graphics"/>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.CopyFromScreen(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Point,System.Drawing.Size)">
+            <summary>
+            Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the Graphics.
+            </summary>
+            <param name="g"></param>
+            <param name="upperLeftSource">The point at the upper-left corner of the source rectangle.</param>
+            <param name="upperLeftDestination">The point at the upper-left corner of the destination rectangle.</param>
+            <param name="blockRegionSize">The size of the area to be transferred</param>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.CopyFromScreen(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Point,System.Drawing.Size,InTheHand.Drawing.CopyPixelOperation)">
+            <summary>
+            Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the Graphics.
+            </summary>
+            <param name="g"></param>
+            <param name="upperLeftSource">The point at the upper-left corner of the source rectangle.</param>
+            <param name="upperLeftDestination">The point at the upper-left corner of the destination rectangle.</param>
+            <param name="blockRegionSize">The size of the area to be transferred</param>
+            <param name="copyPixelOperation">One of the <see cref="T:InTheHand.Drawing.CopyPixelOperation"/> values.</param>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.CopyFromScreen(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.Size)">
+            <summary>
+            Performs a bit-block transfer of the color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the Graphics.
+            </summary>
+            <param name="g"></param>
+            <param name="sourceX">The x-coordinate of the point at the upper-left corner of the source rectangle.</param>
+            <param name="sourceY">The y-coordinate of the point at the upper-left corner of the source rectangle</param>
+            <param name="destinationX">The x-coordinate of the point at the upper-left corner of the destination rectangle.</param>
+            <param name="destinationY">The y-coordinate of the point at the upper-left corner of the destination rectangle.</param>
+            <param name="blockRegionSize">The size of the area to be transferred.</param>
+            <remarks>The CopyFromScreen methods are useful for layering one image on top of another.</remarks>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.CopyFromScreen(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.Size,InTheHand.Drawing.CopyPixelOperation)">
+            <summary>
+            Performs a bit-block transfer of the color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the Graphics.
+            </summary>
+            <param name="g"></param>
+            <param name="sourceX">The x-coordinate of the point at the upper-left corner of the source rectangle.</param>
+            <param name="sourceY">The y-coordinate of the point at the upper-left corner of the source rectangle</param>
+            <param name="destinationX">The x-coordinate of the point at the upper-left corner of the destination rectangle.</param>
+            <param name="destinationY">The y-coordinate of the point at the upper-left corner of the destination rectangle.</param>
+            <param name="blockRegionSize">The size of the area to be transferred.</param>
+            <param name="copyPixelOperation">One of the <see cref="T:InTheHand.Drawing.CopyPixelOperation"/> values.</param>
+            <remarks>The CopyFromScreen methods are useful for layering one image on top of another.
+            The copyPixelOperation parameter allows you to specify if and how the source colors should be blended with the colors in the destination area.</remarks>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.FillRectangle(System.Drawing.Graphics,InTheHand.Drawing.Drawing2D.LinearGradientBrush,System.Drawing.Rectangle)">
+            <summary>
+            Fills the interior of a rectangle with a horizontal or vertical gradient.
+            </summary>
+            <param name="g">Graphics instance to use.</param>
+            <param name="brush"><see cref="T:InTheHand.Drawing.Drawing2D.LinearGradientBrush"/> that determines the characteristics of the fill. </param>
+            <param name="rect">Rectangle structure that represents the rectangle to fill.</param>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE 5.0 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.MeasureString(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Drawing.SizeF)">
+            <summary>
+            Measures the specified string when drawn with the specified <see cref="T:System.Drawing.Font"/> within the specified layout area.
+            </summary>
+            <param name="g">Graphics instance.</param>
+            <param name="text">String to measure.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> defines the text format of the string.</param>
+            <param name="layoutArea">SizeF structure that specifies the maximum layout area for the text.</param>
+            <returns>This method returns a <see cref="T:System.Drawing.SizeF"/> structure that represents the size, in the units specified by the PageUnit property, of the string specified by the text parameter as drawn with the font parameter.</returns>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.MeasureString(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Drawing.SizeF,System.Drawing.StringFormat)">
+            <summary>
+            Measures the specified string when drawn with the specified <see cref="T:System.Drawing.Font"/> and formatted with the specified <see cref="T:System.Drawing.StringFormat"/>.
+            </summary>
+            <param name="g">Graphics instance.</param>
+            <param name="text">String to measure.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> defines the text format of the string.</param>
+            <param name="layoutArea">SizeF structure that specifies the maximum layout area for the text.</param>
+            <param name="stringFormat"><see cref="T:System.Drawing.StringFormat"/> that represents formatting information, such as line spacing, for the string.</param>
+            <returns>This method returns a <see cref="T:System.Drawing.SizeF"/> structure that represents the size, in the units specified by the PageUnit property, of the string specified by the text parameter as drawn with the font parameter.</returns>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.RoundedRectangle(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Brush,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Draws a rectangle with rounded corners.
+            </summary>
+            <param name="g">The Graphics instance to use.</param>
+            <param name="p">The Pen to use for the shape outline.</param>
+            <param name="b">The Brush to use for the shape fill.</param>
+            <param name="rect">The bounding rectangle for the shape.</param>
+            <param name="radius">The radius (in pixels) for the corners.</param>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.0 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.RoundedRectangle(System.Drawing.Graphics,System.Drawing.Pen,InTheHand.Drawing.Drawing2D.LinearGradientBrush,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Draws a rounded rectangle with a gradient fill.
+            </summary>
+            <param name="g">The <see cref="T:System.Drawing.Graphics"/> instance to use.</param>
+            <param name="p">The <see cref="T:System.Drawing.Pen"/> to use for the shape outline.</param>
+            <param name="b">The <see cref="T:System.Drawing.Brush"/> to use for the shape fill.</param>
+            <param name="rect">The bounding rectangle for the shape.</param>
+            <param name="radius">The radius (in pixels) for the corners.</param>
+            <remarks>
+            <list type="table"><listheader><term>Platforms Supported</term><description></description></listheader>
+            <item><term>Windows Mobile</term><description>Windows Mobile Version 5.0 and later</description></item>
+            <item><term>Windows Embedded Compact</term><description>Windows CE .NET 4.0 and later</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.DrawImageAlpha(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.GraphicsUnit,System.Byte)">
+            <summary>
+            Draws the supplied image with the alpha value specified.
+            </summary>
+            <param name="g"></param>
+            <param name="image"></param>
+            <param name="destRect"></param>
+            <param name="srcRect"></param>
+            <param name="srcUnit"></param>
+            <param name="alpha">Per-image alpha constant from 0 (Transparent) to 255 (Opaque).</param>
+        </member>
+        <member name="M:InTheHand.Drawing.GraphicsInTheHand.Scale(System.Int32)">
+            <summary>
+            Converts a co-ordinate value based on 96 dpi to the actual device dpi.
+            </summary>
+            <param name="value">96dpi based co-ordinate.</param>
+            <returns></returns>
+        </member>
+        <member name="P:InTheHand.Drawing.GraphicsInTheHand.DpiX">
+            <summary>
+            Gets the horizontal resolution of the screen.
+            </summary>
+            <returns>The value, in dots per inch, for the horizontal resolution supported by the device.</returns>
+        </member>
+        <member name="P:InTheHand.Drawing.GraphicsInTheHand.DpiY">
+            <summary>
+            Gets the vertical resolution of the screen.
+            </summary>
+            <returns>The value, in dots per inch, for the vertical resolution supported by the device.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InTheHand.Diagnostics</name>
+    </assembly>
+    <members>
+        <member name="T:InTheHand.Diagnostics.ProcessModule">
+            <summary>
+            Represents a.dll or .exe file that is loaded into a particular process.
+            </summary>
+            <remarks>
+            A module is an executable file or a dynamic link library (DLL).
+            Each process consists of one or more modules.
+            You can use this class to get information about the module.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessModule.BaseAddress">
+            <summary>
+            Gets the memory address where the module was loaded.
+            </summary>
+            <value>The load address of the module.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessModule.FileName">
+            <summary>
+            Gets the full path to the module.
+            </summary>
+            <value>The fully qualified path that defines the location of the module.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessModule.FileVersionInfo">
+            <summary>
+            Gets version information about the module.
+            </summary>
+            <value>A <see cref="P:InTheHand.Diagnostics.ProcessModule.FileVersionInfo"/> that contains the module's version information.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessModule.ModuleMemorySize">
+            <summary>
+            Gets the amount of memory that is required to load the module.
+            </summary>
+            <value>The size, in bytes, of the memory that the module occupies.</value>
+            <remarks>ModuleMemorySize does not include any additional memory allocations that the module makes once it is running; it includes only the size of the static code and data in the module file.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessModule.ModuleName">
+            <summary>
+            Gets the name of the process module.
+            </summary>
+            <value>The name of the module.</value>
+        </member>
+        <member name="T:InTheHand.Diagnostics.ProcessThread">
+            <summary>
+            Represents an operating system process thread.
+            </summary>
+            <remarks>
+            Use ProcessThread to obtain information about a thread that is currently running on the system.
+            Doing so allows you, for example, to monitor the thread's performance characteristics.
+            <para>A thread is a path of execution through a program.
+            It is the smallest unit of execution that Win32 schedules.
+            It consists of a stack, the state of the CPU registers, and an entry in the execution list of the system scheduler.</para>
+            <para>A process consists of one or more threads and the code, data, and other resources of a program in memory.
+            Typical program resources are open files, semaphores, and dynamically allocated memory.
+            Each resource of a process is shared by all that process's threads.</para>
+            <para>A program executes when the system scheduler gives execution control to one of the program's threads.
+            The scheduler determines which threads should run and when.
+            A lower-priority thread might be forced to wait while higher-priority threads complete their tasks.
+            On multiprocessor computers, the scheduler can move individual threads to different processors, thus balancing the CPU load.</para>
+            <para>Each process starts with a single thread, which is known as the primary thread.
+            Any thread can create additional threads.
+            All the threads within a process share the address space of that process.</para></remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessThread.BasePriority">
+            <summary>
+            Gets the base priority of the thread.
+            </summary>
+            <value>The base priority of the thread, which the operating system computes by combining the process priority class with the priority level of the associated thread.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessThread.Id">
+            <summary>
+            Gets the unique identifier of the thread.
+            </summary>
+            <value>The unique identifier associated with a specific thread.</value>
+            <remarks>The operating system reuses thread identification numbers, which identify threads only during their lifetimes.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessThread.StartTime">
+            <summary>
+            Gets the time that the operating system started the thread.
+            </summary>
+            <value>A <see cref="T:System.DateTime"/> representing the time that was on the system when the operating system started the thread.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessThread.PrivilegedProcessorTime">
+            <summary>
+            Gets the amount of time that the thread has spent running code inside the operating system core.
+            </summary>
+            <value>A <see cref="T:System.TimeSpan"/> indicating the amount of time that the thread has spent running code inside the operating system core.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessThread.UserProcessorTime">
+            <summary>
+            Gets the amount of time that the associated thread has spent running code inside the application.
+            </summary>
+            <value>A <see cref="T:System.TimeSpan"/> indicating the amount of time that the thread has spent running code inside the application, as opposed to inside the operating system core.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.ProcessThread.TotalProcessorTime">
+            <summary>
+            Gets the total amount of time that this thread has spent using the processor.
+            </summary>
+            <value>A <see cref="T:System.TimeSpan"/> that indicates the amount of time that the thread has had control of the processor.</value>
+        </member>
+        <member name="T:InTheHand.Diagnostics.ProcessHelper">
+            <summary>
+            Provides methods which extend the <see cref="T:System.Diagnostics.Process"/> class.
+            </summary>
+            <seealso cref="T:System.Diagnostics.Process"/>
+        </member>
+        <member name="M:InTheHand.Diagnostics.ProcessHelper.GetProcessName(System.Diagnostics.Process)">
+            <summary>
+            Gets the name of the process.
+            </summary>
+            <param name="p">The <see cref="T:System.Diagnostics.Process"/>.</param>
+            <returns>
+            The name that the system uses to identify the process to the user.</returns>
+            <remarks>
+            <para>Equivalent to System.Diagnostics.Process.ProcessName in the full .NET Framework</para>
+            The ProcessName property holds an executable file name, such as Outlook, that does not include the .exe extension or the path.
+            It is helpful for getting and manipulating all the processes that are associated with the same executable file.</remarks>
+            <seealso cref="T:System.Diagnostics.Process"/>
+        </member>
+        <member name="M:InTheHand.Diagnostics.ProcessHelper.GetMainWindowHandle(System.Diagnostics.Process)">
+            <summary>
+            Gets the window handle of the main window of the associated process.
+            </summary>
+            <param name="p"></param>
+            <returns>The system-generated window handle of the main window of the associated process.</returns>
+            <remarks>The main window is the window that is created when the process is started.
+            After initialization, other windows may be opened, including the Modal and TopLevel windows, but the first window associated with the process remains the main window.</remarks>
+        </member>
+        <member name="M:InTheHand.Diagnostics.ProcessHelper.GetMainWindowTitle(System.Diagnostics.Process)">
+            <summary>
+            Gets the caption of the main window of the process.
+            </summary>
+            <param name="p">The Process</param>
+            <returns>The process's main window title.</returns>
+            <remarks>A process has a main window associated with it only if the process has a graphical interface.
+            If the associated process does not have a main window (so that <see cref="P:System.Diagnostics.Process.MainWindowHandle"/> is zero), MainWindowTitle is an empty string ("").</remarks>
+        </member>
+        <member name="M:InTheHand.Diagnostics.ProcessHelper.GetProcesses">
+            <summary>
+            Creates a new <see cref="T:System.Diagnostics.Process"/> component for each process resource on the local computer. 
+            </summary>
+            <returns>An array of type <see cref="T:System.Diagnostics.Process"/> that represents all the process resources running on the local computer.</returns>
+            <remarks>Use this method to create an array of new <see cref="T:System.Diagnostics.Process"/> components and associate them with all the process resources on the local computer.
+            The process resources must already exist on the local computer, because <see cref="M:InTheHand.Diagnostics.ProcessHelper.GetProcesses"/> does not create system resources but rather associates resources with application-generated <see cref="T:System.Diagnostics.Process"/> components.
+            Because the operating system itself is running background processes, this array is never empty.
+            <para>The name of the process can be retrieved from <see cref="P:System.Diagnostics.ProcessStartInfo.FileName">Process.StartInfo.FileName</see> or by using the <see cref="M:InTheHand.Diagnostics.ProcessHelper.GetProcessName(System.Diagnostics.Process)"/> extension method.</para></remarks>
+            <seealso cref="T:System.Diagnostics.Process"/>
+            <seealso cref="M:InTheHand.Diagnostics.ProcessHelper.GetProcessName(System.Diagnostics.Process)"/>
+        </member>
+        <member name="M:InTheHand.Diagnostics.ProcessHelper.GetModules(System.Diagnostics.Process)">
+            <summary>
+            Gets the modules that have been loaded by the associated process.
+            </summary>
+            <param name="p">The Process.</param>
+            <returns>An array of type <see cref="T:InTheHand.Diagnostics.ProcessModule"/> that represents the modules that have been loaded by the associated process.</returns>
+        </member>
+        <member name="M:InTheHand.Diagnostics.ProcessHelper.GetThreads(System.Diagnostics.Process)">
+            <summary>
+            Gets the set of threads that are running in the associated process.
+            </summary>
+            <param name="p">The Process.</param>
+            <returns>An array of type <see cref="T:InTheHand.Diagnostics.ProcessThread"/> representing the operating system threads currently running in the associated process.</returns>
+        </member>
+        <member name="T:InTheHand.Diagnostics.FileVersionInfo">
+            <summary>
+            Provides version information for a physical file in storage memory.
+            </summary>
+            <remarks>Equivalent to System.Diagnostics.FileVersionInfo</remarks>
+        </member>
+        <member name="M:InTheHand.Diagnostics.FileVersionInfo.GetVersionInfo(System.String)">
+            <summary>
+            Returns a <see cref="T:InTheHand.Diagnostics.FileVersionInfo"/> representing the version information associated with the specified file.
+            </summary>
+            <param name="fileName">The fully qualified path and name of the file to retrieve the version information for.</param>
+            <returns>A <see cref="T:InTheHand.Diagnostics.FileVersionInfo"/> containing information about the file.
+            If the file information was not found, the <see cref="T:InTheHand.Diagnostics.FileVersionInfo"/> contains only the name of the file requested.</returns>
+            <exception cref="T:System.IO.FileNotFoundException">The file specified cannot be found.</exception>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.FileName">
+            <summary>
+            Gets the name of the file that this instance of <see cref="T:InTheHand.Diagnostics.FileVersionInfo"/> describes.
+            </summary>
+            <value>The name of the file described by this instance of <see cref="T:InTheHand.Diagnostics.FileVersionInfo"/>.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.FileMajorPart">
+            <summary>
+            Gets the major part of the version number.
+            </summary>
+            <value>A value representing the major part of the version number.</value>
+            <remarks>Typically, a version number is displayed as "major number.minor number.build number.private part number".
+            A file version number is a 64-bit number that holds the version number for a file as follows: 
+            <list type="bullet"><item>The first 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileMajorPart"/> number.</item> 
+            <item>The next 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileMinorPart"/> number.</item> 
+            <item>The third set of 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileBuildPart"/> number.</item>
+            <item>The last 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FilePrivatePart"/> number.</item></list>
+            This property gets the first set of 16 bits.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.FileMinorPart">
+            <summary>
+            Gets the minor part of the version number.
+            </summary>
+            <value>A value representing the minor part of the version number of the file.</value>
+            <remarks>Typically, a version number is displayed as "major number.minor number.build number.private part number".
+            A file version number is a 64-bit number that holds the version number for a file as follows: 
+            <list type="bullet"><item>The first 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileMajorPart"/> number.</item> 
+            <item>The next 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileMinorPart"/> number.</item> 
+            <item>The third set of 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileBuildPart"/> number.</item>
+            <item>The last 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FilePrivatePart"/> number.</item></list>
+            This property gets the second set of 16 bits.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.FileBuildPart">
+            <summary>
+            Gets the build number of the file.
+            </summary>
+            <value>A value representing the build number of the file.</value>
+            <remarks>Typically, a version number is displayed as "major number.minor number.build number.private part number".
+            A file version number is a 64-bit number that holds the version number for a file as follows: 
+            <list type="bullet"><item>The first 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileMajorPart"/> number.</item> 
+            <item>The next 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileMinorPart"/> number.</item> 
+            <item>The third set of 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileBuildPart"/> number.</item>
+            <item>The last 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FilePrivatePart"/> number.</item></list>
+            This property gets the third set of 16 bits.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.FilePrivatePart">
+            <summary>
+            Gets the file private part number.
+            </summary>
+            <value>A value representing the file private part number.</value>
+            <remarks>Typically, a version number is displayed as "major number.minor number.build number.private part number".
+            A file version number is a 64-bit number that holds the version number for a file as follows: 
+            <list type="bullet"><item>The first 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileMajorPart"/> number.</item> 
+            <item>The next 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileMinorPart"/> number.</item> 
+            <item>The third set of 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FileBuildPart"/> number.</item>
+            <item>The last 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.FilePrivatePart"/> number.</item></list>
+            This property gets the last set of 16 bits.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.ProductMajorPart">
+            <summary>
+            Gets the major part of the version number for the product this file is associated with.
+            </summary>
+            <value>A value representing the major part of the product version number.</value>
+            <remarks>Typically, a version number is displayed as "major number.minor number.build number.private part number".
+            A product version number is a 64-bit number that holds the version number for a product as follows: 
+            <list type="bullet"><item>The first 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductMajorPart"/> number.</item> 
+            <item>The next 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductMinorPart"/> number.</item> 
+            <item>The third set of 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductBuildPart"/> number.</item>
+            <item>The last 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductPrivatePart"/> number.</item></list>
+            This property gets the first set of 16 bits.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.ProductMinorPart">
+            <summary>
+            Gets the minor part of the version number for the product the file is associated with.
+            </summary>
+            <value>A value representing the minor part of the product version number.</value>
+            <remarks>Typically, a version number is displayed as "major number.minor number.build number.private part number".
+            A product version number is a 64-bit number that holds the version number for a product as follows: 
+            <list type="bullet"><item>The first 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductMajorPart"/> number.</item> 
+            <item>The next 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductMinorPart"/> number.</item> 
+            <item>The third set of 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductBuildPart"/> number.</item>
+            <item>The last 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductPrivatePart"/> number.</item></list>
+            This property gets the second set of 16 bits.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.ProductBuildPart">
+            <summary>
+            Gets the build number of the product this file is associated with.
+            </summary>
+            <value>A value representing the build part of the product version number.</value>
+            <remarks>Typically, a version number is displayed as "major number.minor number.build number.private part number".
+            A product version number is a 64-bit number that holds the version number for a product as follows: 
+            <list type="bullet"><item>The first 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductMajorPart"/> number.</item> 
+            <item>The next 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductMinorPart"/> number.</item> 
+            <item>The third set of 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductBuildPart"/> number.</item>
+            <item>The last 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductPrivatePart"/> number.</item></list>
+            This property gets the third set of 16 bits.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.ProductPrivatePart">
+            <summary>
+            Gets the private part number of the product this file is associated with.
+            </summary>
+            <value>A value representing the private part of the product version number.</value>
+            <remarks>Typically, a version number is displayed as "major number.minor number.build number.private part number".
+            A product version number is a 64-bit number that holds the version number for a product as follows: 
+            <list type="bullet"><item>The first 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductMajorPart"/> number.</item> 
+            <item>The next 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductMinorPart"/> number.</item> 
+            <item>The third set of 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductBuildPart"/> number.</item>
+            <item>The last 16 bits are the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.ProductPrivatePart"/> number.</item></list>
+            This property gets the last set of 16 bits.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.IsDebug">
+            <summary>
+            Gets a value that specifies whether the file contains debugging information or is compiled with debugging features enabled.
+            </summary>
+            <value>true if the file contains debugging information or is compiled with debugging features enabled; otherwise, false.</value>\
+            <remarks><para>The FileVersionInfo properties are based on version resource information built into the file.
+            Version resources are often built into binary files such as .exe or .dll files; text files do not have version resource information.</para>
+            Version resources are typically specified in a Win32 resource file, or in assembly attributes.
+            The <b>IsDebug</b> property reflects the <b>VS_FF_DEBUG</b> flag value in the file's <b>VS_FIXEDFILEINFO</b> block, which is built from the VERSIONINFO resource in a Win32 resource file.
+            For more information about specifying version resources in a Win32 resource file, see the Platform SDK About Resource Files topic and VERSIONINFO Resource topic topics.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.IsPatched">
+            <summary>
+            Gets a value that specifies whether the file has been modified and is not identical to the original shipping file of the same version number.
+            </summary>
+            <value>true if the file is patched; otherwise, false.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.IsPreRelease">
+            <summary>
+            Gets a value that specifies whether the file is a development version, rather than a commercially released product.
+            </summary>
+            <value>true if the file is prerelease; otherwise, false.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.IsPrivateBuild">
+            <summary>
+            Gets a value that specifies whether the file was built using standard release procedures.
+            </summary>
+            <value>true if the file is a private build; false if the file was built using standard release procedures or if the file did not contain version information.</value>
+            <remarks>If this value is true, <see cref="P:InTheHand.Diagnostics.FileVersionInfo.PrivateBuild"/> will describe how this version of the file differs from the standard version.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.IsSpecialBuild">
+            <summary>
+            Gets a value that specifies whether the file is a special build.
+            </summary>
+            <value>true if the file is a special build; otherwise, false.</value>
+            <remarks>A file that is a special build was built using standard release procedures, but the file differs from a standard file of the same version number.
+            If this value is true, the <see cref="P:InTheHand.Diagnostics.FileVersionInfo.SpecialBuild"/> property must specify how this file differs from the standard version.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.Comments">
+            <summary>
+            Gets the comments associated with the file.
+            </summary>
+            <value>The comments associated with the file or a null reference (Nothing in Visual Basic) if the file did not contain version information.</value>
+            <remarks>This property contains additional information that can be displayed for diagnostic purposes.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.CompanyName">
+            <summary>
+            Gets the name of the company that produced the file.
+            </summary>
+            <value>The name of the company that produced the file or a null reference (Nothing in Visual Basic) if the file did not contain version information.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.FileDescription">
+            <summary>
+            Gets the description of the file.
+            </summary>
+            <value>The description of the file or a null reference (Nothing in Visual Basic) if the file did not contain version information.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.FileVersion">
+            <summary>
+            Gets the file version number.
+            </summary>
+            <value>The version number of the file or a null reference (Nothing in Visual Basic) if the file did not contain version information.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.InternalName">
+            <summary>
+            Gets the internal name of the file, if one exists.
+            </summary>
+            <value>The internal name of the file.
+            If none exists, this property will contain the original name of the file without the extension.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.LegalCopyright">
+            <summary>
+            Gets all copyright notices that apply to the specified file.
+            </summary>
+            <value>The copyright notices that apply to the specified file.</value>
+            <remarks>This should include the full text of all notices, legal symbols, copyright dates, and so on or a null reference (Nothing in Visual Basic) if the file did not contain version information.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.LegalTrademarks">
+            <summary>
+            Gets the trademarks and registered trademarks that apply to the file.
+            </summary>
+            <value>The trademarks and registered trademarks that apply to the file or a null reference (Nothing in Visual Basic) if the file did not contain version information.</value>
+            <remarks>The legal trademarks include the full text of all notices, legal symbols, and trademark numbers.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.OriginalFilename">
+            <summary>
+            Gets the name the file was created with.
+            </summary>
+            <value>The name the file was created with or a null reference (Nothing in Visual Basic) if the file did not contain version information.</value>
+            <remarks>This property enables an application to determine whether a file has been renamed.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.PrivateBuild">
+            <summary>
+            Gets information about a private version of the file.
+            </summary>
+            <value>Information about a private version of the file or a null reference (Nothing in Visual Basic) if the file did not contain version information.</value>
+            <remarks>This information is present when <see cref="P:InTheHand.Diagnostics.FileVersionInfo.IsPrivateBuild"/> is true.</remarks>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.ProductName">
+            <summary>
+            Gets the name of the product this file is distributed with.
+            </summary>
+            <value>The name of the product this file is distributed with or a null reference (Nothing in Visual Basic) if the file did not contain version information.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.ProductVersion">
+            <summary>
+            Gets the version of the product this file is distributed with.
+            </summary>
+            <value>The version of the product this file is distributed with or a null reference (Nothing in Visual Basic) if the file did not contain version information.</value>
+        </member>
+        <member name="P:InTheHand.Diagnostics.FileVersionInfo.SpecialBuild">
+            <summary>
+            Gets the special build information for the file.
+            </summary>
+            <value>The special build information for the file or a null reference (Nothing in Visual Basic) if the file did not contain version information.</value>
+        </member>
+    </members>
+</doc>
