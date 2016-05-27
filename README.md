@@ -47,6 +47,7 @@
    [Smart Thread Pool]: <http://smartthreadpool.codeplex.com/releases/view/37796>
    [System.Data.SQLite]: <http://system.data.sqlite.org/index.html/doc/trunk/www/downloads.wiki#sqlite-netFx35-binary-PocketPC-ARM-2008>
    [DapperLite]: <https://github.com/ryankirkman/DapperLite>
+   [log4net]: <https://logging.apache.org/log4net/>
    [XLogger]: <https://github.com/lsoft/XLogger>
    [EntityFramework.SqlServerCompact]: <https://github.com/ErikEJ/EntityFramework.SqlServerCompact>
    [SQLiteWrapper]: <https://github.com/riaresults/SQLiteWrapper>
