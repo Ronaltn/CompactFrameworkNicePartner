@@ -8,7 +8,7 @@
 ### ADO.NET
 * [System.Data.SQLite] - System.Data.SQLite is an ADO.NET provider for SQLite.
 
-* [SQLiteWrapper] - A wrapper library for SQLite that builds on .NET 2.0 and up, including Compact Framework
+* [SQLiteWrapper] - A wrapper library for SQLite that builds on .NET 2.0 and up, including Compact Framework.
 
 ### ORM
 * [OpenNETCF.ORM Framework] - The OpenNETCF.ORM library is a lightweight object-relational mapping framework designed for use with the .NET Compact Framework, the full .NET Framework and Mono for Android (a.k.a. MonoDroid) and Mono for iOS (MonoTouch).
@@ -35,6 +35,9 @@
 ### Thread
 * [Smart Thread Pool] - Smart Thread Pool is a thread pool written in C#. It is far more advanced than the .NET built-in thread pool.But provide only limited support for Windows CE.
 
+### IO
+* [OpenNETCF.Desktop.Communication] - A managed code library wrapper around the Remote Application Programmer's Interface (RAPI) exposed by ActiveSync and Windows Mobile Device Center (WMDC).
+
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
    [Smart Device Framework]: <http://opennetcf.codeplex.com/>
@@ -51,3 +54,4 @@
    [XLogger]: <https://github.com/lsoft/XLogger>
    [EntityFramework.SqlServerCompact]: <https://github.com/ErikEJ/EntityFramework.SqlServerCompact>
    [SQLiteWrapper]: <https://github.com/riaresults/SQLiteWrapper>
+   [OpenNETCF.Desktop.Communication]: <http://rapi.codeplex.com/>
