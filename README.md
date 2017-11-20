@@ -1,9 +1,9 @@
 # Compact Framework Nice Partner
 
 ### Framework
-* ![OpenNETCF](http://download-codeplex.sec.s-msft.com/Download?ProjectName=opennetcf&DownloadId=929332&Build=21031)[Smart Device Framework] - The Smart Device Framework is aimed at developers wanting to simplify and reduce the cost of their development experience using the .NET Compact Framework.
+* ![OpenNETCF](https://avatars2.githubusercontent.com/u/5286930?s=460&v=4)[Smart Device Framework] - The Smart Device Framework is aimed at developers wanting to simplify and reduce the cost of their development experience using the .NET Compact Framework.
 
-* ![InTheHand](http://download-codeplex.sec.s-msft.com/Download?ProjectName=inthehandcf&DownloadId=932920&Build=21031)[Compact Framework In The Hand] - A set of APIs for Windows Mobile and Windows Embedded devices for .NET Compact Framework 3.5 and later.
+* ![InTheHand](https://avatars1.githubusercontent.com/u/11249648?s=200&v=4)[Compact Framework In The Hand] - A set of APIs for Windows Mobile and Windows Embedded devices for .NET Compact Framework 3.5 and later.
 
 ### ADO.NET
 * [System.Data.SQLite] - System.Data.SQLite is an ADO.NET provider for SQLite.
@@ -41,12 +41,10 @@
 ### Extension
 * [OpenNETCF.Extensions] - This project is a collection of utiliy classes, helpers and extension methods that help us maintain projects that support multiple target platforms. It also contains useful classes that we use across multiple projects and platforms to perform things like Validation, providing REST connectors and such.
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
    [Smart Device Framework]: <https://github.com/ctacke/sdf/>
    [Compact Framework In The Hand]: <https://github.com/inthehand/compactframework/>
-   [OpenNETCF.ORM Framework]: <https://github.com/ctacke/orm/>
-   [OpenNETCF.IoC Framework]: <https://github.com/ctacke/opennetcf-ioc/>
+   [OpenNETCF.ORM Framework]: <https://github.com/ctacke/orm/>
+   [OpenNETCF.IoC Framework]: <https://github.com/ctacke/opennetcf-ioc/>
    [Ninject]: <http://www.ninject.org/>
    [Json.NET]: <https://github.com/JamesNK/Newtonsoft.Json/releases/tag/3.5.8>
    [NDataBase]: <http://ndatabase.codeplex.com/>
