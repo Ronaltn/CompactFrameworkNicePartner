@@ -45,8 +45,8 @@
 
    [Smart Device Framework]: <https://github.com/ctacke/sdf/>
    [Compact Framework In The Hand]: <https://github.com/inthehand/compactframework/>
-   [OpenNETCF.ORM Framework]: <http://orm.codeplex.com/>
-   [OpenNETCF.IoC Framework]: <http://ioc.codeplex.com/>
+   [OpenNETCF.ORM Framework]: <https://github.com/ctacke/orm/>
+   [OpenNETCF.IoC Framework]: <https://github.com/ctacke/opennetcf-ioc/>
    [Ninject]: <http://www.ninject.org/>
    [Json.NET]: <https://github.com/JamesNK/Newtonsoft.Json/releases/tag/3.5.8>
    [NDataBase]: <http://ndatabase.codeplex.com/>
